@@ -1,0 +1,1330 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jalur Cerna · Sistem Pencernaan Manusia</title>
+<meta name="description" content="Situs belajar interaktif Sistem Pencernaan Manusia untuk SMP–SMA: diagram organ, perjalanan makanan, model dan sintaks Problem Based Learning (kasus Dimas), serta kuis 12 soal.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jalur Cerna · Sistem Pencernaan Manusia">
+<meta property="og:description" content="Situs belajar interaktif Sistem Pencernaan Manusia untuk SMP–SMA: diagram organ, perjalanan makanan, model dan sintaks Problem Based Learning (kasus Dimas), serta kuis 12 soal.">
+<meta name="theme-color" content="#EEF2EF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1519" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}img{max-width:100%}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Spline+Sans+Mono:wght@400;500;600&display=swap">
+<style>
+/* Layout: anatomy plate (figure + live station card) first, then a lab-notebook flow: PBL model, five-phase workspace, quiz. */
+:root{
+  --paper:#EEF2EF;
+  --sheet:#FAFBFA;
+  --ink:#15202A;
+  --ink-2:#4A5862;
+  --rule:#C9D3CD;
+  --grid:#E1E8E3;
+  --accent:#A12440;
+  --tract:#D35B72;
+  --tract-2:#B9677F;
+  --tract-soft:#F3DDE2;
+  --liver:#8B4A3B;
+  --pancreas:#D2A55C;
+  --bile:#6A8A3B;
+  --mucus:#5E9FB6;
+  --acid:#E5592F;
+  --bolus:#E6A436;
+  --amber-soft:#F7E6C2;
+  --good:#1F6D47;
+  --good-soft:#DAEEE2;
+  --bad:#AE2A22;
+  --bad-soft:#F6E0DC;
+  --font-display:"Archivo","Arial Black",system-ui,sans-serif;
+  --font-body:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-mono:"Spline Sans Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F1519;--sheet:#161E23;--ink:#E3EAE5;--ink-2:#9BA9A2;--rule:#2C383E;--grid:#1B252A;
+    --accent:#F28AA0;--tract:#D96880;--tract-2:#C4849A;--tract-soft:#3B222A;
+    --liver:#B06A58;--pancreas:#DDB46E;--bile:#90AE5A;--mucus:#7DBBD0;--acid:#F06A43;--bolus:#F0B64E;--amber-soft:#3A2F17;
+    --good:#72CC97;--good-soft:#16321F;--bad:#FF8E82;--bad-soft:#3B1C18;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F1519;--sheet:#161E23;--ink:#E3EAE5;--ink-2:#9BA9A2;--rule:#2C383E;--grid:#1B252A;
+  --accent:#F28AA0;--tract:#D96880;--tract-2:#C4849A;--tract-soft:#3B222A;
+  --liver:#B06A58;--pancreas:#DDB46E;--bile:#90AE5A;--mucus:#7DBBD0;--acid:#F06A43;--bolus:#F0B64E;--amber-soft:#3A2F17;
+  --good:#72CC97;--good-soft:#16321F;--bad:#FF8E82;--bad-soft:#3B1C18;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--paper)}
+.wrap{max-width:1160px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--font-display);font-stretch:125%;font-weight:800;letter-spacing:-.015em;line-height:1.04;text-wrap:balance;margin:0}
+h1{font-size:clamp(2.05rem,5.6vw,3.9rem)}
+h2{font-size:clamp(1.6rem,3.6vw,2.5rem)}
+h3{font-size:clamp(1.2rem,2.1vw,1.5rem);font-weight:700;line-height:1.12}
+h4{font-family:var(--font-mono);font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-2);margin:0}
+p{margin:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.eyebrow{font-family:var(--font-mono);font-size:.74rem;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-2)}
+.lede{font-size:1.14rem;max-width:62ch;color:var(--ink-2)}
+.note{font-size:.85rem;color:var(--ink-2)}
+.mono{font-family:var(--font-mono)}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper);border-bottom:1px solid var(--rule)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:6px}
+.brand{display:flex;align-items:center;gap:8px;font-family:var(--font-display);font-stretch:125%;font-weight:800;font-size:1rem;color:var(--ink);text-decoration:none;white-space:nowrap}
+.brand svg{color:var(--accent);flex:none}
+.nav{display:flex;gap:2px;overflow-x:auto;min-width:0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{font-family:var(--font-mono);font-size:.72rem;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-2);text-decoration:none;padding:12px 10px;white-space:nowrap}
+.nav a:hover{color:var(--ink)}
+.nav a[aria-current="true"]{color:var(--ink);box-shadow:inset 0 -2px 0 var(--accent)}
+@media (max-width:520px){.brand span{display:none}.nav a{padding:12px 7px;letter-spacing:.04em}}
+
+/* sections */
+.sec{border-top:1px solid var(--rule);padding-block:clamp(48px,7vw,88px);scroll-margin-top:48px}
+.hero{padding-block:clamp(28px,5vw,56px) clamp(48px,7vw,88px);scroll-margin-top:48px}
+.sec-head{display:grid;gap:12px;margin-bottom:clamp(24px,4vw,40px)}
+.hero-h{display:grid;gap:14px;max-width:900px}
+.sub{margin-top:clamp(56px,8vw,96px);display:grid;gap:20px;scroll-margin-top:64px}
+.sub-h{display:grid;gap:8px;max-width:64ch}
+
+/* buttons */
+.btn{font:700 .92rem/1.2 var(--font-body);padding:10px 14px;min-height:44px;border:1px solid var(--ink);background:transparent;color:var(--ink);border-radius:3px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+.btn:hover:not(:disabled){background:var(--sheet)}
+.btn.solid{background:var(--ink);color:var(--sheet)}
+.btn.solid:hover:not(:disabled){background:var(--ink);opacity:.88}
+.btn:disabled{opacity:.35;cursor:not-allowed}
+.btn svg{flex:none}
+.linkish{background:none;border:0;padding:0;font:inherit;font-weight:700;color:var(--accent);text-decoration:underline;text-underline-offset:3px;cursor:pointer;text-align:left}
+.seg{display:inline-flex;border:1px solid var(--ink);border-radius:3px;overflow:hidden;flex:none}
+.seg button{font:700 .86rem/1.2 var(--font-body);padding:9px 13px;min-height:40px;background:transparent;color:var(--ink);border:0;cursor:pointer}
+.seg button+button{border-left:1px solid var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--sheet)}
+
+/* route strip */
+.route-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px 24px;margin:28px 0 18px}
+.route-strip{overflow-x:auto;min-width:0;max-width:100%;padding-bottom:2px}
+.route-strip ol{list-style:none;margin:0;padding:0;display:flex;align-items:center;min-width:max-content}
+.route-strip li{display:flex;align-items:center}
+.route-strip li+li::before{content:"";width:clamp(10px,2.2vw,28px);height:3px;background:var(--tract);flex:none}
+.route-btn{display:flex;align-items:center;gap:7px;background:none;border:1px solid transparent;border-radius:3px;padding:6px 8px;font:inherit;font-size:.92rem;color:var(--ink-2);cursor:pointer;white-space:nowrap}
+.route-btn:hover{color:var(--ink)}
+.route-btn .dot{width:14px;height:14px;border-radius:50%;border:3px solid var(--tract);background:var(--sheet);flex:none}
+.route-btn .n{font-family:var(--font-mono);font-size:.7rem;color:var(--accent)}
+.route-btn[aria-current="step"]{color:var(--ink);font-weight:700;border-color:var(--rule);background:var(--sheet)}
+.route-btn[aria-current="step"] .dot{background:var(--tract)}
+.glands{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.glands .g-lbl{font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-2);margin-right:4px}
+.route-btn .sq{width:12px;height:12px;border-radius:2px;flex:none}
+
+/* plate */
+.plate{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(16px,3vw,36px);align-items:start;scroll-margin-top:64px}
+@media (max-width:880px){.plate{grid-template-columns:minmax(0,1fr)}}
+@media (min-width:881px){.plate .figure{position:sticky;top:calc(env(safe-area-inset-top,0px) + 60px)}}
+.figure{margin:0;background-color:var(--sheet);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:22px 22px;border:1px solid var(--rule);border-radius:4px;padding:14px 14px 16px;display:grid;gap:12px;min-width:0}
+.fig-cap{font-family:var(--font-mono);font-size:.7rem;color:var(--ink-2);display:flex;justify-content:space-between;gap:6px 14px;flex-wrap:wrap;line-height:1.5}
+.fig-cap b{color:var(--ink);font-weight:600}
+svg.fig{display:block;width:100%;max-width:480px;height:auto;margin-inline:auto;overflow:visible}
+.ctrl{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:center}
+
+/* figure drawing */
+.fig .body-o{fill:none;stroke:var(--rule);stroke-width:1.6}
+.fig .organ{cursor:pointer;transition:opacity .2s}
+.fig.sel .organ:not(.on){opacity:.6}
+.fig .organ:hover{opacity:1}
+.fig .organ:focus{outline:none}
+.fig .fill{stroke:transparent;stroke-width:2;transition:stroke .2s}
+.fig .organ.on .fill,.fig .organ:focus-visible .fill{stroke:var(--ink)}
+.fig .f-tract{fill:var(--tract)}
+.fig .f-liver{fill:var(--liver)}
+.fig .f-bile{fill:var(--bile)}
+.fig .f-pancreas{fill:var(--pancreas)}
+.fig .rugae{fill:none;stroke:var(--tract-soft);stroke-width:1.4;stroke-linecap:round;opacity:.8}
+.fig .teeth{fill:none;stroke:var(--sheet);stroke-width:2.6;stroke-dasharray:3 1.6}
+.fig .anus{fill:none;stroke:var(--ink-2);stroke-width:2.5;stroke-linecap:round}
+.fig .tube{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.fig .t-eso{stroke:var(--tract);stroke-width:9px}
+.fig .t-si{stroke:var(--tract);stroke-width:8px}
+.fig .t-colon{stroke:var(--tract-2);stroke-width:16px}
+.fig .t-app{stroke:var(--tract-2);stroke-width:5px}
+.fig .t-rect{stroke:var(--tract-2);stroke-width:12px}
+.fig .case{fill:none;stroke:var(--ink);stroke-linecap:round;stroke-linejoin:round;opacity:0;transition:opacity .2s}
+.fig .organ.on .case,.fig .organ:focus-visible .case{opacity:1}
+.fig .hit{fill:none;stroke:transparent;pointer-events:stroke}
+.fig .bolus{fill:var(--bolus);stroke:var(--ink);stroke-width:1.6;pointer-events:none}
+.fig .lbl{cursor:pointer}
+.fig .lbl text{font-family:var(--font-body);font-size:12.5px;fill:var(--ink-2)}
+.fig .lbl .num{font-family:var(--font-mono);font-size:10.5px;fill:var(--accent);font-weight:600}
+.fig .lead{fill:none;stroke:var(--ink-2);stroke-width:.8}
+.fig .lbl.on text{fill:var(--ink);font-weight:700}
+.fig .lbl.on .lead{stroke:var(--ink);stroke-width:1.2}
+
+/* station card */
+.station{background:var(--sheet);border:1px solid var(--rule);border-radius:4px;padding:clamp(18px,2.6vw,28px);min-width:0}
+.st-in{display:grid;gap:20px}
+@media (prefers-reduced-motion: no-preference){.st-in{animation:stIn .28s ease-out}}
+@keyframes stIn{from{opacity:.2;transform:translateY(4px)}to{opacity:1;transform:none}}
+.st-top{display:grid;gap:6px}
+.st-meta{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.st-name{font-size:clamp(1.65rem,3.2vw,2.25rem);font-weight:800}
+.st-alt{color:var(--ink-2);font-style:italic}
+.pills{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.pill{font-family:var(--font-mono);font-size:.68rem;font-weight:500;text-transform:uppercase;letter-spacing:.08em;padding:4px 8px;border:1px solid var(--rule);border-radius:2px;color:var(--ink-2)}
+.pill.yes{background:var(--ink);border-color:var(--ink);color:var(--sheet)}
+.pill.no{text-decoration:line-through;opacity:.75}
+.ph{display:grid;gap:6px}
+.ph-bar{position:relative;height:12px;border-radius:2px;margin-top:4px;background:linear-gradient(90deg,#C41F2A 0%,#E3262A 7.1%,#EE4B2B 14.3%,#F37B21 21.4%,#F7A51D 28.6%,#F2CB1A 35.7%,#C2D232 42.9%,#5EB648 50%,#2AA676 57.1%,#2A8FB8 64.3%,#3466AE 71.4%,#4E4E9F 78.6%,#643E94 85.7%,#713287 92.9%,#5E2470 100%)}
+.ph-rng{position:absolute;top:-5px;bottom:-5px;min-width:10px;border:2.5px solid var(--ink);border-radius:3px;background:transparent}
+.ph-rng.thin{transform:translateX(-50%)}
+.ph-scale{display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:.66rem;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.ph-lbl{font-size:.94rem}
+.ph-lbl b{font-family:var(--font-mono);font-weight:600}
+.st-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:0;border-radius:3px;overflow:hidden}
+.st-facts div{background:var(--sheet);padding:10px 12px;min-width:0}
+.st-facts dt{font-family:var(--font-mono);font-size:.64rem;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-2)}
+.st-facts dd{margin:2px 0 0;font-family:var(--font-mono);font-size:.92rem;font-weight:500}
+.st-block{display:grid;gap:8px}
+.rx{list-style:none;margin:0;padding:0;display:grid}
+.rx li{display:grid;grid-template-columns:minmax(0,10.5rem) minmax(0,1fr);gap:2px 14px;padding:9px 0;border-top:1px solid var(--rule)}
+.rx li:last-child{border-bottom:1px solid var(--rule)}
+.rx small{display:block;color:var(--ink-2);font-size:.78rem;line-height:1.35}
+.rx code{font-family:var(--font-mono);font-size:.86rem;font-weight:500}
+@media (max-width:520px){.rx li{grid-template-columns:minmax(0,1fr)}}
+.nut{width:100%;border-collapse:collapse;font-size:.95rem}
+.nut th{text-align:left;font-weight:700;padding:8px 12px 8px 0;width:7.4rem;vertical-align:top;border-top:1px solid var(--rule)}
+.nut td{padding:8px 0;border-top:1px solid var(--rule);color:var(--ink-2)}
+.nut tr:last-child th,.nut tr:last-child td{border-bottom:1px solid var(--rule)}
+.nut tr.chg td{color:var(--ink);font-weight:700}
+.nut .chg-t{font-family:var(--font-mono);font-size:.62rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-left:6px;white-space:nowrap}
+.sick{background:var(--bad-soft);border-radius:3px;padding:14px 16px;display:grid;gap:8px}
+.sick h4{color:var(--bad)}
+.sick p{font-size:.95rem}
+.st-next{display:flex;justify-content:space-between;align-items:center;gap:10px 14px;flex-wrap:wrap;border-top:1px solid var(--rule);padding-top:16px;font-size:.92rem;color:var(--ink-2)}
+
+/* mekanis / kimiawi */
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden}
+.duo>div{background:var(--sheet);padding:clamp(18px,2.4vw,26px);display:grid;gap:10px;align-content:start}
+.duo .term{font-family:var(--font-display);font-stretch:125%;font-weight:800;font-size:1.45rem;line-height:1.1}
+.duo .eg{font-size:.92rem;color:var(--ink-2)}
+@media (max-width:640px){.duo{grid-template-columns:minmax(0,1fr)}}
+.judge{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.judge li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 16px;align-items:center;padding:12px 0;border-bottom:1px solid var(--rule)}
+.judge .why{grid-column:1/-1;font-size:.93rem;color:var(--ink-2);max-width:72ch}
+.judge li.ok .why b{color:var(--good)}
+.judge li.no .why b{color:var(--bad)}
+.judge .seg button:disabled{cursor:default}
+.judge .seg button[aria-pressed="true"]{background:var(--bad-soft);color:var(--bad)}
+.judge .seg button.is-right{background:var(--good-soft);color:var(--good)}
+@media (max-width:560px){.judge li{grid-template-columns:minmax(0,1fr)}}
+.judge-foot{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:var(--font-mono);font-size:.8rem;color:var(--ink-2)}
+
+/* tables */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--rule);border-radius:4px;background:var(--sheet)}
+table.ref{border-collapse:collapse;width:100%;min-width:620px;font-size:.95rem}
+table.ref thead th{font-family:var(--font-mono);font-size:.66rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-2);text-align:left;padding:12px 14px;border-bottom:1px solid var(--rule);vertical-align:bottom}
+table.ref tbody th{font-family:var(--font-body);font-size:.95rem;font-weight:700;text-align:left;padding:12px 14px;border-bottom:1px solid var(--rule);vertical-align:top}
+table.ref td{padding:12px 14px;border-bottom:1px solid var(--rule);vertical-align:top}
+table.ref tbody tr:last-child th,table.ref tbody tr:last-child td{border-bottom:0}
+table.ref td.rxn{font-family:var(--font-mono);font-size:.86rem}
+table.ref td.num{font-family:var(--font-mono);font-size:.86rem;font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* model */
+.model{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
+@media (max-width:880px){.model{grid-template-columns:minmax(0,1fr)}}
+.prose{display:grid;gap:16px;max-width:64ch}
+.traits{list-style:none;margin:6px 0 0;padding:0}
+.traits li{display:grid;grid-template-columns:9.5rem minmax(0,1fr);gap:2px 16px;padding:12px 0;border-top:1px solid var(--rule)}
+.traits li:last-child{border-bottom:1px solid var(--rule)}
+.traits b{font-family:var(--font-display);font-stretch:112%;font-weight:700}
+@media (max-width:520px){.traits li{grid-template-columns:minmax(0,1fr)}}
+.idcard{background:var(--sheet);border:1px solid var(--rule);border-radius:4px;min-width:0}
+.idcard-h{padding:12px 16px;border-bottom:2px solid var(--ink);font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.idcard dl{margin:0}
+.idcard .row{display:grid;grid-template-columns:9rem minmax(0,1fr);gap:4px 12px;padding:11px 16px;border-bottom:1px solid var(--rule)}
+.idcard .row:last-child{border-bottom:0}
+.idcard dt{font-size:.85rem;color:var(--ink-2)}
+.idcard dd{margin:0;font-weight:700}
+.idcard .row.wide{grid-template-columns:minmax(0,1fr)}
+.idcard .row.wide dd{font-weight:400;font-size:.95rem}
+@media (max-width:460px){.idcard .row{grid-template-columns:minmax(0,1fr)}}
+.goals{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden;counter-reset:tp}
+.goals li{background:var(--sheet);padding:18px;display:grid;gap:8px;align-content:start;counter-increment:tp}
+.goals li::before{content:"TP " counter(tp);font-family:var(--font-mono);font-size:.72rem;font-weight:600;color:var(--accent);letter-spacing:.06em}
+@media (max-width:760px){.goals{grid-template-columns:minmax(0,1fr)}}
+
+/* sintaks */
+.phases{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border:1px solid var(--ink);border-radius:4px;overflow:hidden}
+.phases li{display:flex}
+.phases li+li .ph-btn{border-left:1px solid var(--ink)}
+.ph-btn{flex:1;text-align:left;background:var(--sheet);color:var(--ink);border:0;padding:14px;display:grid;gap:6px;align-content:start;cursor:pointer;font:inherit}
+.ph-btn:hover{background:var(--paper)}
+.ph-btn .k{font-family:var(--font-mono);font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.ph-btn .t{font-family:var(--font-display);font-stretch:112%;font-weight:700;font-size:.98rem;line-height:1.2}
+.ph-btn[aria-current="step"]{background:var(--ink);color:var(--sheet)}
+.ph-btn[aria-current="step"] .k{color:var(--tract-soft)}
+@media (max-width:760px){
+  .phases{grid-template-columns:minmax(0,1fr)}
+  .phases li+li .ph-btn{border-left:0;border-top:1px solid var(--ink)}
+  .ph-btn{grid-template-columns:4.4rem minmax(0,1fr);align-items:baseline;padding:12px 14px}
+}
+.phase{display:grid;gap:clamp(24px,3.5vw,36px);margin-top:28px}
+.roles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden}
+.roles>div{background:var(--sheet);padding:18px 20px;display:grid;gap:8px;align-content:start}
+@media (max-width:640px){.roles{grid-template-columns:minmax(0,1fr)}}
+.work{display:grid;gap:16px}
+.work>h3{margin-bottom:-4px}
+.phase-nav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--rule);padding-top:18px}
+.phase-nav .btn:only-child{margin-left:auto}
+
+/* case record */
+.record{background:var(--sheet);border:1px solid var(--rule);border-radius:4px;max-width:820px}
+.record-h{display:flex;justify-content:space-between;gap:8px 12px;flex-wrap:wrap;padding:12px 18px;border-bottom:2px solid var(--ink);font-family:var(--font-mono);font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.record-id{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:0;border-bottom:1px solid var(--rule)}
+.record-id div{padding:10px 18px;border-right:1px solid var(--rule)}
+.record-id div:last-child{border-right:0}
+.record-id dt{font-family:var(--font-mono);font-size:.64rem;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-2)}
+.record-id dd{margin:0;font-weight:700}
+@media (max-width:520px){.record-id{grid-template-columns:minmax(0,1fr)}.record-id div{border-right:0;border-bottom:1px solid var(--rule)}.record-id div:last-child{border-bottom:0}}
+.record-body{padding:18px;display:grid;gap:16px}
+.modes{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:.9rem;color:var(--ink-2)}
+.narr{font-size:1.08rem;line-height:2}
+.tag{font:inherit;background:none;border:0;border-bottom:2px dotted var(--ink-2);padding:0 2px;color:inherit;cursor:pointer;border-radius:0;line-height:1.5}
+.tag:hover{background:var(--paper)}
+.tag[data-mark="gejala"]{background:var(--tract-soft);border-bottom:2px solid var(--accent)}
+.tag[data-mark="pemicu"]{background:var(--amber-soft);border-bottom:2px solid var(--bolus)}
+.tag[data-mark]::after{font-family:var(--font-mono);font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-left:4px;vertical-align:.4em;color:var(--ink-2)}
+.tag[data-mark="gejala"]::after{content:"gejala"}
+.tag[data-mark="pemicu"]::after{content:"pemicu"}
+.tag.right::before{content:"✓ ";color:var(--good);font-weight:700}
+.tag.wrong::before{content:"✗ ";color:var(--bad);font-weight:700}
+.tag.missed{border-bottom:2px solid var(--bad)}
+.tag.missed::before{content:"? ";color:var(--bad);font-weight:700}
+.tag-act{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.tag-res{font-size:.93rem;color:var(--ink-2);flex-basis:100%}
+.tag-res b{color:var(--ink)}
+label.fl{display:grid;gap:6px;font-size:.92rem;font-weight:700;color:var(--ink)}
+label.fl .q{font-weight:400;color:var(--ink-2);font-size:.88rem}
+input,select,textarea{font:inherit;font-size:1rem;color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:3px;padding:9px 11px;width:100%;min-width:0}
+textarea{min-height:92px;resize:vertical;line-height:1.5}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+
+/* divisions & lkpd */
+.divs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:860px){.divs{grid-template-columns:minmax(0,1fr)}}
+.div-c{border:1px solid var(--rule);background:var(--sheet);border-radius:4px;padding:18px;display:grid;gap:10px;align-content:start}
+.div-c h3{font-size:1.12rem}
+.div-c .kq{font-style:italic;border-top:1px solid var(--rule);padding-top:10px}
+.div-c .orgs{display:flex;gap:12px;flex-wrap:wrap;font-size:.9rem}
+.lkpd{border:1px solid var(--rule);border-radius:4px;background:var(--sheet);padding:18px;display:grid;gap:14px;max-width:820px}
+.f-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.members{display:grid;gap:8px}
+.member{display:grid;grid-template-columns:1.4rem minmax(0,1fr) minmax(0,13rem);gap:8px;align-items:center}
+.member .mn{font-family:var(--font-mono);font-size:.78rem;color:var(--ink-2)}
+@media (max-width:560px){.f-row{grid-template-columns:minmax(0,1fr)}.member{grid-template-columns:1.4rem minmax(0,1fr)}.member select{grid-column:2}}
+
+/* compare */
+.cmp{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(16px,3vw,32px);align-items:start}
+@media (max-width:880px){.cmp{grid-template-columns:minmax(0,1fr)}}
+.cmp-fig{margin:0;background:var(--sheet);border:1px solid var(--rule);border-radius:4px;padding:14px;display:grid;gap:12px;justify-items:center}
+.cmp-svg{width:100%;max-width:380px;display:block;height:auto}
+.cmp-cap{font-size:.92rem;color:var(--ink-2);text-align:center;max-width:44ch;min-height:3em}
+.cmp-svg text{font-family:var(--font-body);font-size:11.5px;fill:var(--ink-2)}
+.c-lumen,.c-stfill{fill:var(--tract-soft)}
+.c-wall{fill:none;stroke:var(--tract);stroke-width:6;stroke-linecap:round}
+.c-mucus{fill:none;stroke:var(--mucus);stroke-width:7;stroke-linecap:round;transition:stroke-width .5s}
+.is-dimas .c-mucus{stroke-width:2.5;stroke-dasharray:7 9}
+.c-acid{fill:var(--acid);opacity:.5;transition:transform .6s}
+.is-dimas .c-acid{transform:translateY(-22px)}
+.c-food circle{fill:var(--bolus);stroke:var(--ink);stroke-width:1}
+.c-les{fill:var(--accent);transition:transform .5s}
+.is-dimas .c-les-l{transform:translateX(-8px)}
+.is-dimas .c-les-r{transform:translateX(8px)}
+.c-burn{fill:var(--bad);opacity:0;transition:opacity .5s}
+.is-dimas .c-burn{opacity:.14}
+.c-ero{fill:none;stroke:var(--bad);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.c-lead{fill:none;stroke:var(--ink-2);stroke-width:.8}
+.cmp-svg .c-strong{fill:var(--ink);font-weight:700}
+.cmp-svg .c-bad{fill:var(--bad);font-weight:700}
+.only-n,.only-d{transition:opacity .4s}
+.only-d{opacity:0}
+.is-dimas .only-n{opacity:0}
+.is-dimas .only-d{opacity:1}
+.c-drops circle{fill:var(--acid)}
+@media (prefers-reduced-motion: no-preference){
+  .is-dimas .c-drops circle{animation:rise 2.4s linear infinite;opacity:0}
+  .is-dimas .c-drops circle:nth-child(2){animation-delay:.8s}
+  .is-dimas .c-drops circle:nth-child(3){animation-delay:1.6s}
+}
+@media (prefers-reduced-motion: reduce){
+  .c-drops circle:nth-child(2){transform:translateY(-34px)}
+  .c-drops circle:nth-child(3){transform:translateY(-68px)}
+}
+@keyframes rise{0%{transform:translateY(0);opacity:0}15%{opacity:1}85%{opacity:1}100%{transform:translateY(-104px);opacity:0}}
+.lk[data-state="normal"] .n{background:var(--good-soft)}
+.lk[data-state="dimas"] .d{background:var(--bad-soft)}
+.lk[data-state="normal"] thead .n,.lk[data-state="dimas"] thead .d{color:var(--ink)}
+.guide{border-top:1px solid var(--rule)}
+.guide details{border-bottom:1px solid var(--rule)}
+.guide summary{cursor:pointer;list-style:none;display:grid;grid-template-columns:2rem minmax(0,1fr) auto;gap:8px 12px;padding:14px 0;font-weight:700;align-items:baseline}
+.guide summary::-webkit-details-marker{display:none}
+.guide .qn{font-family:var(--font-mono);font-size:.75rem;color:var(--accent)}
+.guide .open-t{font-family:var(--font-mono);font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-2);border:1px solid var(--rule);padding:3px 7px;border-radius:2px;white-space:nowrap}
+.guide .open-t::before{content:"Petunjuk"}
+.guide details[open] .open-t::before{content:"Tutup"}
+.guide .hint{margin:0 0 16px 2.75rem;color:var(--ink-2);max-width:64ch}
+@media (max-width:520px){.guide summary{grid-template-columns:1.6rem minmax(0,1fr)}.guide .open-t{grid-column:2;justify-self:start}.guide .hint{margin-left:2.2rem}}
+
+/* checklist */
+.checks{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.checks li{border-bottom:1px solid var(--rule)}
+.checks label{display:grid;grid-template-columns:1.4rem minmax(0,1fr);gap:10px;padding:12px 0;cursor:pointer;align-items:start}
+.checks input{width:18px;height:18px;margin:3px 0 0;padding:0;accent-color:var(--accent)}
+.two{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:start}
+@media (max-width:880px){.two{grid-template-columns:minmax(0,1fr)}}
+.stack{display:grid;gap:16px;min-width:0}
+
+/* quiz */
+.quiz{max-width:780px;background:var(--sheet);border:1px solid var(--rule);border-radius:4px;padding:clamp(18px,3vw,32px);display:grid;gap:20px}
+.q-head{display:grid;gap:10px}
+.q-count{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--font-mono);font-size:.72rem;color:var(--ink-2);text-transform:uppercase;letter-spacing:.08em}
+.segs{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:3px}
+.segs i{height:6px;background:var(--rule);border-radius:1px}
+.segs i.ok{background:var(--good)}
+.segs i.no{background:var(--bad)}
+.segs i.cur{background:var(--ink)}
+.q-text{font-size:clamp(1.12rem,2.2vw,1.32rem);font-weight:700;line-height:1.4;text-wrap:pretty}
+.q-text:focus{outline:none}
+.opts{display:grid;gap:8px}
+.opt{display:grid;grid-template-columns:2.2rem minmax(0,1fr);gap:8px;align-items:baseline;text-align:left;font:inherit;padding:12px 14px;border:1px solid var(--rule);background:var(--paper);color:var(--ink);border-radius:3px;cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ink)}
+.opt:disabled{cursor:default}
+.opt-k{font-family:var(--font-mono);font-size:.8rem;font-weight:600;color:var(--ink-2)}
+.opt.right{border-color:var(--good);background:var(--good-soft)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.opt.right .opt-k{color:var(--good)}
+.opt.wrong .opt-k{color:var(--bad)}
+.q-fb{display:grid;gap:8px;padding:14px 16px;border-radius:3px;background:var(--paper);border:1px solid var(--rule)}
+.fb-v{font-weight:700}
+.fb-v.ok{color:var(--good)}
+.fb-v.no{color:var(--bad)}
+.q-nav{display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap}
+.slots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+@media (max-width:560px){.slots{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.slot{min-height:48px;border:1px dashed var(--ink-2);border-radius:3px;display:grid;grid-template-columns:1.4rem minmax(0,1fr);align-items:center;gap:4px;padding:6px 10px;font:inherit;font-size:.95rem;text-align:left;background:transparent;color:var(--ink)}
+.slot .sn{font-family:var(--font-mono);font-size:.74rem;color:var(--accent);font-weight:600}
+.slot.filled{border-style:solid;border-color:var(--ink);background:var(--paper);cursor:pointer}
+.slot.right{border-color:var(--good);background:var(--good-soft)}
+.slot.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.pool{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-size:.95rem;padding:9px 13px;border:1px solid var(--ink);border-radius:3px;background:var(--sheet);color:var(--ink);cursor:pointer;min-height:42px}
+.chip:disabled{opacity:.28;cursor:default}
+.q-score{font-family:var(--font-display);font-stretch:125%;font-weight:800;font-size:clamp(3rem,9vw,4.8rem);line-height:1;font-variant-numeric:tabular-nums}
+.q-score span{font-size:.42em;color:var(--ink-2)}
+.missed{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.missed li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 14px;padding:10px 0;border-bottom:1px solid var(--rule);font-size:.95rem;align-items:baseline}
+@media (max-width:520px){.missed li{grid-template-columns:minmax(0,1fr)}}
+
+footer{border-top:1px solid var(--rule);padding-block:28px 44px;font-size:.88rem;color:var(--ink-2)}
+footer .wrap{display:grid;gap:6px}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#materi" aria-label="Jalur Cerna, ke awal halaman">
+      <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 1.5v5c0 3.2 7 2.2 7 6s-7 2-7 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+      <span>Jalur Cerna</span>
+    </a>
+    <nav class="nav" aria-label="Bagian halaman">
+      <a href="#materi">Materi</a>
+      <a href="#model">Model PBL</a>
+      <a href="#sintaks">Sintaks</a>
+      <a href="#kuis">Kuis</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ================= MATERI ================= -->
+<section id="materi" class="hero" aria-labelledby="h-materi">
+  <div class="wrap">
+    <div class="hero-h">
+      <p class="eyebrow">Materi · IPA Kelas VIII · Fase D</p>
+      <h1 id="h-materi">Sistem Pencernaan Manusia</h1>
+      <p class="lede">Ikuti sesuap nasi dari mulut sampai anus. Ketuk organ pada gambar atau tekan Putar perjalanan untuk melihat enzim, pH, dan perubahan zat makanan di setiap tahap.</p>
+    </div>
+
+    <div class="route-row">
+      <nav class="route-strip" aria-label="Urutan saluran pencernaan">
+        <ol>
+          <li><button class="route-btn" type="button" data-go="mulut"><span class="dot"></span><span class="n">1</span>Mulut</button></li>
+          <li><button class="route-btn" type="button" data-go="kerongkongan"><span class="dot"></span><span class="n">2</span>Kerongkongan</button></li>
+          <li><button class="route-btn" type="button" data-go="lambung"><span class="dot"></span><span class="n">3</span>Lambung</button></li>
+          <li><button class="route-btn" type="button" data-go="usus-halus"><span class="dot"></span><span class="n">4</span>Usus halus</button></li>
+          <li><button class="route-btn" type="button" data-go="usus-besar"><span class="dot"></span><span class="n">5</span>Usus besar</button></li>
+          <li><button class="route-btn" type="button" data-go="rektum"><span class="dot"></span><span class="n">6</span>Rektum &amp; anus</button></li>
+        </ol>
+      </nav>
+      <div class="glands">
+        <span class="g-lbl">Kelenjar</span>
+        <button class="route-btn" type="button" data-go="hati"><span class="sq" style="background:var(--liver)"></span>Hati</button>
+        <button class="route-btn" type="button" data-go="pankreas"><span class="sq" style="background:var(--pancreas)"></span>Pankreas</button>
+      </div>
+    </div>
+
+    <div class="plate" id="plate">
+      <figure class="figure">
+        <svg class="fig" id="fig" viewBox="0 0 440 545" role="group" aria-label="Gambar saluran dan kelenjar pencernaan manusia, tampak depan">
+          <g transform="translate(70,0)">
+            <g class="body-o" aria-hidden="true">
+              <ellipse cx="150" cy="56" rx="34" ry="42"/>
+              <path d="M138,95 L138,124 C114,128 76,132 64,156 C58,170 56,200 56,240 L56,545"/>
+              <path d="M162,95 L162,124 C186,128 224,132 236,156 C242,170 244,200 244,240 L244,545"/>
+            </g>
+            <g class="organ" data-organ="hati" tabindex="0" role="button" aria-label="Hati">
+              <path class="fill f-liver" d="M72,192 C86,170 140,166 168,178 C176,182 175,190 168,196 C150,214 132,236 108,248 C92,256 78,250 73,236 C68,222 68,206 72,192 Z"/>
+              <ellipse class="fill f-bile" cx="117" cy="253" rx="6" ry="9"/>
+            </g>
+            <g class="organ" data-organ="pankreas" tabindex="0" role="button" aria-label="Pankreas">
+              <path class="fill f-pancreas" d="M138,306 C160,298 196,304 226,296 C234,294 236,304 228,308 C200,318 166,318 140,320 C132,320 132,308 138,306 Z"/>
+            </g>
+            <g class="organ" data-organ="usus-halus" tabindex="0" role="button" aria-label="Usus halus">
+              <path class="tube t-si" d="M150,282 C132,282 122,296 124,312 C126,328 140,336 160,334 C160,346 158,354 150,360 L118,362 C106,362 104,378 116,378 L184,378 C196,378 196,394 184,394 L116,394 C104,394 104,410 116,410 L184,410 C196,410 196,426 184,426 L116,426 C104,426 104,442 116,442 L184,442 C196,442 196,458 184,458 L110,460 C100,460 96,464 92,466"/>
+            </g>
+            <g class="organ" data-organ="usus-besar" tabindex="0" role="button" aria-label="Usus besar">
+              <path class="tube t-colon" d="M92,478 C84,470 82,460 82,450 L82,362 C82,350 90,344 102,344 L200,344 C212,344 218,352 218,364 L218,450 C218,470 206,482 190,486 C180,488 170,490 166,494"/>
+              <path class="tube t-app" d="M86,486 C80,497 86,506 94,502"/>
+            </g>
+            <g class="organ" data-organ="lambung" tabindex="0" role="button" aria-label="Lambung">
+              <path class="fill f-tract" d="M160,210 C168,196 200,192 216,208 C232,224 234,262 214,284 C198,300 168,300 150,288 L150,276 C162,280 176,276 180,262 C184,248 176,232 166,226 Z"/>
+              <path class="rugae" d="M202,222 C212,240 214,262 202,280 M190,240 C197,253 197,268 188,283"/>
+            </g>
+            <g class="organ" data-organ="kerongkongan" tabindex="0" role="button" aria-label="Kerongkongan">
+              <path class="tube t-eso" d="M150,86 C150,130 150,170 161,211"/>
+            </g>
+            <g class="organ" data-organ="mulut" tabindex="0" role="button" aria-label="Rongga mulut">
+              <path class="fill f-tract" d="M131,80 C137,71 163,71 169,80 C163,90 137,90 131,80 Z"/>
+              <path class="teeth" d="M137,77.5 L163,77.5"/>
+            </g>
+            <g class="organ" data-organ="rektum" tabindex="0" role="button" aria-label="Rektum dan anus">
+              <path class="tube t-rect" d="M166,494 C158,500 154,508 153,522"/>
+              <path class="anus" d="M145,531 L161,531"/>
+            </g>
+            <path id="route" fill="none" stroke="none" d="M150,80 L150,86 C150,130 150,170 161,211 C182,222 210,236 204,262 C198,282 172,288 150,282 C132,282 122,296 124,312 C126,328 140,336 160,334 C160,346 158,354 150,360 L118,362 C106,362 104,378 116,378 L184,378 C196,378 196,394 184,394 L116,394 C104,394 104,410 116,410 L184,410 C196,410 196,426 184,426 L116,426 C104,426 104,442 116,442 L184,442 C196,442 196,458 184,458 L110,460 C100,460 96,464 92,466 L84,462 L82,450 L82,362 C82,350 90,344 102,344 L200,344 C212,344 218,352 218,364 L218,450 C218,470 206,482 190,486 C180,488 170,490 166,494 C158,500 154,508 153,522"/>
+            <circle id="bolus" class="bolus" r="6.5" cx="150" cy="80"/>
+            <g class="lbls">
+              <g class="lbl" data-organ="mulut"><path class="lead" d="M171,80 L252,80"/><text x="256" y="84"><tspan class="num">1</tspan> Mulut</text></g>
+              <g class="lbl" data-organ="kerongkongan"><path class="lead" d="M145,150 L48,150"/><text x="44" y="154" text-anchor="end"><tspan class="num">2</tspan> Kerongkongan</text></g>
+              <g class="lbl" data-organ="hati"><path class="lead" d="M88,214 L48,214"/><text x="44" y="218" text-anchor="end">Hati</text></g>
+              <g class="lbl" data-organ="lambung"><path class="lead" d="M229,240 L252,240"/><text x="256" y="244"><tspan class="num">3</tspan> Lambung</text></g>
+              <g class="lbl" data-organ="pankreas"><path class="lead" d="M233,302 L252,302"/><text x="256" y="306">Pankreas</text></g>
+              <g class="lbl" data-organ="usus-halus"><path class="lead" d="M197,418 L252,418"/><text x="256" y="422"><tspan class="num">4</tspan> Usus halus</text></g>
+              <g class="lbl" data-organ="usus-besar"><path class="lead" d="M73,384 L48,384"/><text x="44" y="388" text-anchor="end"><tspan class="num">5</tspan> Usus besar</text></g>
+              <g class="lbl" data-organ="rektum"><path class="lead" d="M161,512 L252,512"/><text x="256" y="516"><tspan class="num">6</tspan> Rektum &amp; anus</text></g>
+            </g>
+          </g>
+        </svg>
+        <figcaption class="fig-cap">
+          <span><b>Gambar 1.</b> Saluran dan kelenjar pencernaan, tampak depan. Angka = urutan dilewati makanan.</span>
+          <span id="step-lbl">Tahap 1 dari 6</span>
+        </figcaption>
+        <div class="ctrl">
+          <button class="btn" type="button" id="prev">← Sebelumnya</button>
+          <button class="btn solid" type="button" id="play" aria-pressed="false">
+            <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" id="play-ico"><path d="M2 1 L11 6 L2 11 Z" fill="currentColor"/></svg>
+            <span id="play-t">Putar perjalanan</span>
+          </button>
+          <button class="btn" type="button" id="next">Berikutnya →</button>
+        </div>
+      </figure>
+      <article class="station" id="station" aria-labelledby="st-name"></article>
+      <p class="sr" id="st-live" aria-live="polite"></p>
+    </div>
+
+    <!-- Mekanis vs kimiawi -->
+    <div class="sub" id="mekanis">
+      <div class="sub-h">
+        <p class="eyebrow">Dua cara mencerna</p>
+        <h2>Mekanis atau kimiawi?</h2>
+        <p class="lede">Kedua proses berjalan bersamaan. Bedanya ada pada apa yang berubah: ukuran makanan, atau molekulnya.</p>
+      </div>
+      <div class="duo">
+        <div>
+          <h4>Pencernaan mekanis</h4>
+          <p class="term">Ukuran berubah, molekul tetap</p>
+          <p>Makanan dihancurkan secara fisik menjadi bagian yang lebih kecil. Rumus molekulnya tidak berubah.</p>
+          <p class="eg">Contoh: gigi mengunyah, otot lambung mengaduk, gerak peristaltik, empedu mengemulsikan lemak.</p>
+        </div>
+        <div>
+          <h4>Pencernaan kimiawi</h4>
+          <p class="term">Ikatan molekul diputus enzim</p>
+          <p>Enzim menghidrolisis molekul besar menjadi molekul kecil yang dapat diserap tubuh.</p>
+          <p class="eg">Contoh: ptialin (amilum → maltosa), pepsin (protein → pepton), lipase (lemak → asam lemak + gliserol).</p>
+        </div>
+      </div>
+      <div class="stack">
+        <h3>Coba pilah</h3>
+        <p class="note">Tentukan jenis pencernaan untuk setiap peristiwa. Pembahasan muncul setelah kamu memilih.</p>
+        <ul class="judge" id="sorter"></ul>
+        <div class="judge-foot"><span id="sorter-score">0 dari 8 tepat</span><button class="linkish" type="button" id="sorter-reset" hidden>Ulangi</button></div>
+      </div>
+    </div>
+
+    <!-- Tabel enzim -->
+    <div class="sub" id="enzim">
+      <div class="sub-h">
+        <p class="eyebrow">Ringkasan</p>
+        <h2>Enzim dan zat pencernaan</h2>
+        <p class="lede">Ringkasan dari modul ajar. Ketuk nama organ untuk membukanya di Gambar 1.</p>
+      </div>
+      <div class="tbl-wrap">
+        <table class="ref">
+          <thead><tr><th scope="col">Organ</th><th scope="col">Enzim / sekresi</th><th scope="col">Substrat → produk</th><th scope="col">pH</th><th scope="col">Peran dan gangguan</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><button class="linkish" type="button" data-go="mulut">Rongga mulut</button></th><td>Ptialin (amilase ludah)</td><td class="rxn">Amilum → Maltosa</td><td class="num">6,8–7,0</td><td>Mastikasi membentuk bolus. Karies merusak fungsi mekanis awal.</td></tr>
+            <tr><th scope="row"><button class="linkish" type="button" data-go="kerongkongan">Kerongkongan</button></th><td>Mukus pelumas</td><td class="rxn">Tanpa enzim</td><td class="num">±7</td><td>Peristaltik. Sfingter bawah yang lemah memicu refluks (GERD).</td></tr>
+            <tr><th scope="row"><button class="linkish" type="button" data-go="lambung">Lambung</button></th><td>HCl, pepsin, renin</td><td class="rxn">Protein → Pepton<br>Kaseinogen → Kasein</td><td class="num">1,5–2,0</td><td>HCl mengaktifkan pepsinogen dan membunuh kuman. Mukus mencegah autodigesti.</td></tr>
+            <tr><th scope="row"><button class="linkish" type="button" data-go="hati">Hati</button></th><td>Empedu (bukan enzim)</td><td class="rxn">Lemak → Butiran kecil</td><td class="num">7,5–8,0</td><td>Mengemulsikan lemak agar lipase bekerja lebih cepat.</td></tr>
+            <tr><th scope="row"><button class="linkish" type="button" data-go="pankreas">Pankreas</button></th><td>Amilase, tripsin, lipase</td><td class="rxn">Pepton → Asam amino<br>Lemak → Asam lemak + Gliserol</td><td class="num">±8</td><td>Getahnya basa dan menetralkan kimus asam.</td></tr>
+            <tr><th scope="row"><button class="linkish" type="button" data-go="usus-halus">Usus halus</button></th><td>Maltase, laktase, peptidase</td><td class="rxn">Maltosa → Glukosa</td><td class="num">6,0–7,5</td><td>Muara empedu dan getah pankreas. Vili menyerap sari makanan.</td></tr>
+            <tr><th scope="row"><button class="linkish" type="button" data-go="usus-besar">Usus besar</button></th><td>Bakteri E. coli</td><td class="rxn">Fermentasi sisa selulosa</td><td class="num">5,5–7,0</td><td>Reabsorpsi air. Gangguannya menyebabkan diare atau konstipasi.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MODEL ================= -->
+<section id="model" class="sec" aria-labelledby="h-model">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Model pembelajaran</p>
+      <h2 id="h-model">Problem Based Learning</h2>
+    </div>
+    <div class="model">
+      <div class="prose">
+        <p class="lede">Pembelajaran berbasis masalah dimulai dari sebuah kasus nyata. Kamu dan kelompok menyelidiki penyebabnya, mencari sumber, menguji dugaan, lalu menyajikan solusi. Guru mendampingi sebagai fasilitator.</p>
+        <p>Kasus di modul ini adalah Dimas, siswa SMP yang sering merasakan dada terbakar dan nyeri ulu hati. Untuk menjelaskan keluhannya, kamu perlu memahami kerongkongan, lambung, asam lambung, dan enzim. Materi dipelajari karena dibutuhkan untuk memecahkan kasus.</p>
+        <h3>Ciri PBL</h3>
+        <ul class="traits">
+          <li><b>Masalah autentik</b><span>Kasusnya realistis dan dekat dengan keseharian siswa, seperti pola makan dan kebiasaan begadang.</span></li>
+          <li><b>Kerja kelompok</b><span>Kelompok kecil 4–5 siswa dengan pembagian peran investigasi.</span></li>
+          <li><b>Penyelidikan</b><span>Siswa mencari, membaca, dan menilai sumber untuk menguji hipotesis awal.</span></li>
+          <li><b>Karya</b><span>Hasil penyelidikan disajikan sebagai poster atau infografis diagnosis.</span></li>
+          <li><b>Refleksi</b><span>Pelajaran ditutup dengan meluruskan miskonsepsi dan tes formatif.</span></li>
+        </ul>
+      </div>
+      <aside class="idcard" aria-label="Identitas modul ajar">
+        <div class="idcard-h"><span>Identitas modul</span><span>Kurikulum Merdeka</span></div>
+        <dl>
+          <div class="row"><dt>Mata pelajaran</dt><dd>IPA</dd></div>
+          <div class="row"><dt>Fase / kelas</dt><dd>D / VIII</dd></div>
+          <div class="row"><dt>Alokasi waktu</dt><dd>5 JP, 2 pertemuan (2 JP + 3 JP)</dd></div>
+          <div class="row"><dt>Profil Pelajar Pancasila</dt><dd>Bernalar kritis, gotong royong, mandiri</dd></div>
+          <div class="row"><dt>Acuan sintaks</dt><dd>Arends (2012), 5 fase</dd></div>
+          <div class="row wide"><dt>Capaian pembelajaran</dt><dd>Peserta didik memahami sistem organ tubuh manusia (sistem pencernaan), keterkaitan struktur jaringan organ dengan fungsinya, mekanisme pencernaan mekanis dan kimiawi, serta kelainan fisiologis akibat pola konsumsi.</dd></div>
+        </dl>
+      </aside>
+    </div>
+    <div class="sub">
+      <div class="sub-h"><h3>Tujuan pembelajaran</h3></div>
+      <ol class="goals">
+        <li>Merinci alur organ pencernaan mekanis dan kimiawi secara terstruktur.</li>
+        <li>Mengaitkan pengaruh asam lambung (HCl) dan enzim hidrolisis terhadap penguraian zat makanan.</li>
+        <li>Mendiagnosis faktor penyebab gangguan pencernaan melalui pemecahan kasus kontekstual.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SINTAKS ================= -->
+<section id="sintaks" class="sec" aria-labelledby="h-sintaks">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Langkah-langkah model</p>
+      <h2 id="h-sintaks">Sintaks PBL</h2>
+      <p class="lede">Lima fase menurut Arends (2012), dijalankan dalam dua pertemuan. Pilih fase untuk melihat peran guru dan peranmu, lalu kerjakan aktivitasnya di halaman ini.</p>
+    </div>
+
+    <ol class="phases" id="phases" aria-label="Fase PBL">
+      <li><button class="ph-btn" type="button" data-phase="1" aria-current="step"><span class="k">Fase 1</span><span class="t">Orientasi siswa pada masalah</span></button></li>
+      <li><button class="ph-btn" type="button" data-phase="2"><span class="k">Fase 2</span><span class="t">Mengorganisasi peserta didik</span></button></li>
+      <li><button class="ph-btn" type="button" data-phase="3"><span class="k">Fase 3</span><span class="t">Membimbing penyelidikan</span></button></li>
+      <li><button class="ph-btn" type="button" data-phase="4"><span class="k">Fase 4</span><span class="t">Mengembangkan &amp; menyajikan karya</span></button></li>
+      <li><button class="ph-btn" type="button" data-phase="5"><span class="k">Fase 5</span><span class="t">Analisis &amp; evaluasi solusi</span></button></li>
+    </ol>
+
+    <!-- Fase 1 -->
+    <div class="phase" data-phase="1">
+      <div class="roles">
+        <div><h4>Guru</h4><p>Menyajikan narasi kasus klinis autentik: rekam medis remaja yang mengalami sensasi dada terbakar (heartburn) dan ulu hati perih.</p></div>
+        <div><h4>Kamu</h4><p>Membaca kasus, mencatat gejala kunci, dan merumuskan pertanyaan penyelidikan (driving questions) tentang kelainan organ.</p></div>
+      </div>
+      <div class="work">
+        <h3>Baca kasus, tandai gejala dan pemicunya</h3>
+        <p class="note">Pilih jenis tanda, lalu ketuk frasa bergaris titik. Setelah selesai, periksa catatanmu.</p>
+        <div class="record">
+          <div class="record-h"><span>Rekam medis</span><span>Kasus pemicu PBL</span></div>
+          <dl class="record-id">
+            <div><dt>Nama</dt><dd>Dimas</dd></div>
+            <div><dt>Usia</dt><dd>14 tahun</dd></div>
+            <div><dt>Status</dt><dd>Siswa SMP</dd></div>
+          </dl>
+          <div class="record-body">
+            <div class="modes"><span>Tandai sebagai</span>
+              <div class="seg" role="group" aria-label="Jenis tanda">
+                <button type="button" data-mode="gejala" aria-pressed="true">Gejala</button>
+                <button type="button" data-mode="pemicu" aria-pressed="false">Pemicu</button>
+              </div>
+            </div>
+            <p class="narr" id="narr">Dimas sering mengeluhkan <button class="tag" type="button" data-kind="gejala">dada terasa terbakar (heartburn)</button>, <button class="tag" type="button" data-kind="gejala">kerongkongan terasa asam pahit</button>, serta <button class="tag" type="button" data-kind="gejala">nyeri hebat di ulu hati</button> terutama saat malam hari. Dari wawancara pola hidup, Dimas gemar <button class="tag" type="button" data-kind="pemicu">begadang bermain gawai</button> sambil mengonsumsi <button class="tag" type="button" data-kind="pemicu">keripik cabai ekstra pedas</button> dan <button class="tag" type="button" data-kind="pemicu">minuman bersoda pekat</button>. Paginya, ia sering <button class="tag" type="button" data-kind="pemicu">melewatkan sarapan</button> karena terlambat bangun sekolah.</p>
+            <div class="tag-act">
+              <button class="btn solid" type="button" id="tag-check">Periksa catatan</button>
+              <button class="btn" type="button" id="tag-reset">Hapus tanda</button>
+              <p class="tag-res" id="tag-res" aria-live="polite"></p>
+            </div>
+          </div>
+        </div>
+        <label class="fl" for="f1-q">Pertanyaan penyelidikan kelompokmu
+          <span class="q">Tulis 2–3 pertanyaan yang ingin kalian jawab.</span>
+          <textarea id="f1-q" data-save placeholder="Contoh: Mengapa nyeri ulu hati Dimas lebih parah pada malam hari?"></textarea>
+        </label>
+        <p class="note">Isian di halaman ini tersimpan di perangkat ini saja.</p>
+      </div>
+      <div class="phase-nav"><button class="btn" type="button" data-phase-go="2">Fase 2: Mengorganisasi →</button></div>
+    </div>
+
+    <!-- Fase 2 -->
+    <div class="phase" data-phase="2" hidden>
+      <div class="roles">
+        <div><h4>Guru</h4><p>Membagi kelas ke dalam kelompok kecil (4–5 siswa) dan membagikan Lembar Kerja Peserta Didik (LKPD).</p></div>
+        <div><h4>Kamu</h4><p>Membagi peran ke tiga divisi investigasi: Anatomi &amp; Mekanik, Biokimia Enzim, dan Pola Konsumsi.</p></div>
+      </div>
+      <div class="work">
+        <h3>Tiga divisi investigasi</h3>
+        <div class="divs">
+          <div class="div-c">
+            <h4>Divisi 1</h4>
+            <h3>Anatomi &amp; Mekanik</h3>
+            <p>Menelusuri letak dan kerja kerongkongan, sfingter esofagus bawah, dan lambung.</p>
+            <p class="kq">Bagian mana yang seharusnya mencegah isi lambung naik, dan mengapa gagal pada Dimas?</p>
+            <div class="orgs"><button class="linkish" type="button" data-go="kerongkongan">Kerongkongan</button><button class="linkish" type="button" data-go="lambung">Lambung</button></div>
+          </div>
+          <div class="div-c">
+            <h4>Divisi 2</h4>
+            <h3>Biokimia Enzim</h3>
+            <p>Menyelidiki kerja HCl, pepsin, dan lapisan mukus lambung, serta reaksi antasida.</p>
+            <p class="kq">Apa yang terjadi pada dinding lambung jika HCl dan pepsin bekerja tanpa ada makanan?</p>
+            <div class="orgs"><button class="linkish" type="button" data-go="lambung">Lambung</button></div>
+          </div>
+          <div class="div-c">
+            <h4>Divisi 3</h4>
+            <h3>Pola Konsumsi</h3>
+            <p>Menganalisis kebiasaan Dimas: makanan pedas, minuman bersoda, begadang, dan melewatkan sarapan.</p>
+            <p class="kq">Kebiasaan mana yang paling memperparah keluhan, dan jadwal makan seperti apa yang lebih sehat?</p>
+            <div class="orgs"><button class="linkish" type="button" data-go="lambung">Lambung</button><button class="linkish" type="button" data-go="usus-halus">Usus halus</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="work">
+        <h3>Identitas kelompok (LKPD)</h3>
+        <div class="lkpd">
+          <div class="f-row">
+            <label class="fl" for="lk-kel">Kelompok<input id="lk-kel" data-save type="text" placeholder="Nama atau nomor kelompok"></label>
+            <label class="fl" for="lk-kls">Kelas<input id="lk-kls" data-save type="text" placeholder="VIII-…"></label>
+          </div>
+          <div class="members" id="members"></div>
+        </div>
+      </div>
+      <div class="phase-nav"><button class="btn" type="button" data-phase-go="1">← Fase 1</button><button class="btn" type="button" data-phase-go="3">Fase 3: Penyelidikan →</button></div>
+    </div>
+
+    <!-- Fase 3 -->
+    <div class="phase" data-phase="3" hidden>
+      <div class="roles">
+        <div><h4>Guru</h4><p>Memfasilitasi penelusuran pustaka, memantau diskusi kelompok, dan memvalidasi hipotesis awal.</p></div>
+        <div><h4>Kamu</h4><p>Mengkaji literatur tentang kerja asam lambung (HCl), gerak peristaltik, dan fungsi sfingter esofagus bawah.</p></div>
+      </div>
+      <div class="work">
+        <h3>LKPD Aktivitas 1: Bandingkan kondisi normal dan kondisi Dimas</h3>
+        <div class="cmp">
+          <figure class="cmp-fig" id="cmp">
+            <div class="seg" role="group" aria-label="Kondisi yang ditampilkan">
+              <button type="button" data-cmp="normal" aria-pressed="true">Lambung normal</button>
+              <button type="button" data-cmp="dimas" aria-pressed="false">Kondisi Dimas</button>
+            </div>
+            <svg class="cmp-svg" viewBox="0 0 320 290" role="img" aria-labelledby="cmp-cap">
+              <defs><clipPath id="st-clip"><path d="M128,128 C108,138 70,150 66,192 C62,240 110,272 170,264 C230,256 262,222 258,182 C254,142 210,124 162,128 Z"/></clipPath></defs>
+              <rect class="c-burn" x="112" y="0" width="66" height="114"/>
+              <text class="c-bad only-d" x="104" y="58" text-anchor="end">rasa terbakar</text>
+              <rect class="c-lumen" x="131" y="0" width="28" height="124"/>
+              <path class="c-wall" d="M128,0 L128,120 M162,0 L162,120"/>
+              <path class="c-stfill" d="M128,128 C108,138 70,150 66,192 C62,240 110,272 170,264 C230,256 262,222 258,182 C254,142 210,124 162,128 Z"/>
+              <g clip-path="url(#st-clip)">
+                <path class="c-acid" d="M50,214 C90,206 130,222 170,212 C210,202 245,214 275,208 L275,300 L50,300 Z"/>
+                <g class="c-food only-n">
+                  <circle cx="118" cy="214" r="9"/><circle cx="145" cy="205" r="10"/><circle cx="172" cy="214" r="8"/><circle cx="198" cy="205" r="9"/><circle cx="222" cy="214" r="7"/>
+                </g>
+              </g>
+              <path class="c-mucus" d="M134,138 C116,148 80,158 77,192 C74,234 116,260 170,253 C224,246 248,216 246,184 C243,150 206,134 158,137"/>
+              <path class="c-wall" d="M128,128 C108,138 70,150 66,192 C62,240 110,272 170,264 C230,256 262,222 258,182 C254,142 210,124 162,128"/>
+              <path class="c-ero only-d" d="M92,232 l6,-5 l4,6 l6,-5 M226,230 l5,-6 l5,5 l6,-6 M150,259 l5,-5 l5,5 l5,-5"/>
+              <ellipse class="c-les c-les-l" cx="137" cy="124" rx="9" ry="6"/>
+              <ellipse class="c-les c-les-r" cx="153" cy="124" rx="9" ry="6"/>
+              <g class="c-drops only-d"><circle cx="145" cy="112" r="3.4"/><circle cx="140" cy="112" r="2.6"/><circle cx="150" cy="112" r="2.6"/></g>
+              <text x="170" y="34">Kerongkongan</text>
+              <path class="c-lead" d="M163,121 L176,105"/><text class="c-strong" x="178" y="102">Sfingter esofagus bawah</text>
+              <path class="c-lead" d="M46,180 L77,188"/><text x="42" y="178" text-anchor="end">Mukus</text>
+              <text class="c-strong" x="170" y="240" text-anchor="middle">HCl · pH 1,5–2,0</text>
+              <g class="only-n"><path class="c-lead" d="M224,206 L262,158"/><text x="264" y="154">Makanan</text></g>
+              <g class="only-d"><text class="c-bad" x="264" y="154">Lambung</text><text class="c-bad" x="264" y="168">kosong</text></g>
+            </svg>
+            <p class="cmp-cap" id="cmp-cap">Sfingter menutup rapat, mukus tebal, dan asam bekerja pada makanan.</p>
+          </figure>
+          <div class="tbl-wrap">
+            <table class="ref lk" id="lk-table" data-state="normal" style="min-width:520px">
+              <thead><tr><th scope="col">Komponen</th><th scope="col" class="n">Kondisi normal</th><th scope="col" class="d">Pada Dimas</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Sfingter esofagus bawah</th><td class="n">Menutup rapat setelah bolus masuk; mencegah isi lambung kembali ke atas.</td><td class="d">Relaksasi abnormal atau terbuka, sehingga asam merembes ke dada.</td></tr>
+                <tr><th scope="row">Mukosa dan asam lambung (HCl)</th><td class="n">pH 1,5–2,0 membunuh kuman; mukus tebal melindungi dinding lambung.</td><td class="d">HCl diproduksi berlebih tanpa makanan; mukus terkikis iritasi.</td></tr>
+                <tr><th scope="row">Enzim pepsin</th><td class="n">Memecah protein menjadi pepton setelah diaktifkan HCl.</td><td class="d">Dapat mengiritasi dinding lambung sendiri bila lapisan mukus menipis.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="work">
+        <h3>Pertanyaan pemandu diskusi</h3>
+        <p class="note">Diskusikan dulu bersama kelompok. Buka petunjuk untuk memeriksa arah jawaban kalian.</p>
+        <div class="guide">
+          <details><summary><span class="qn">P1</span><span>Mengapa perut kosong memperparah kerusakan mukosa lambung saat HCl terus disekresikan?</span><span class="open-t"></span></summary>
+            <p class="hint">Saat ada makanan, asam dan pepsin bekerja pada makanan itu. Tanpa makanan, asam langsung mengenai dinding lambung. Jika lapisan mukus menipis, dinding lambung teriritasi dan terasa perih.</p></details>
+          <details><summary><span class="qn">P2</span><span>Sfingter apa yang membatasi lambung dan kerongkongan, dan mengapa asam bisa naik ke rongga dada?</span><span class="open-t"></span></summary>
+            <p class="hint">Sfingter esofagus bawah (kardia). Jika otot cincin ini melemah atau membuka tidak normal, isi lambung yang asam naik ke kerongkongan. Berbaring setelah makan dan gas dari minuman bersoda menambah tekanan ke atas.</p></details>
+          <details><summary><span class="qn">P3</span><span>Bagaimana antasida bekerja secara kimiawi untuk meredakan nyeri lambung sesaat?</span><span class="open-t"></span></summary>
+            <p class="hint">Antasida bersifat basa dan menetralkan HCl. Contoh: Mg(OH)₂ + 2HCl → MgCl₂ + 2H₂O. Efeknya hanya sesaat karena lambung terus memproduksi asam.</p></details>
+        </div>
+      </div>
+      <div class="phase-nav"><button class="btn" type="button" data-phase-go="2">← Fase 2</button><button class="btn" type="button" data-phase-go="4">Fase 4: Menyajikan karya →</button></div>
+    </div>
+
+    <!-- Fase 4 -->
+    <div class="phase" data-phase="4" hidden>
+      <div class="roles">
+        <div><h4>Guru</h4><p>Menjadwalkan presentasi panel antarkelompok dan mengamati argumentasi ilmiah siswa.</p></div>
+        <div><h4>Kamu</h4><p>Menyusun poster atau infografis diagnosis, lalu mempresentasikan mekanisme gangguan beserta rancangan solusinya.</p></div>
+      </div>
+      <div class="two">
+        <div class="work">
+          <h3>LKPD Aktivitas 2: Bahan poster</h3>
+          <label class="fl" for="f4-rm">1. Rumusan masalah ilmiah<textarea id="f4-rm" data-save></textarea></label>
+          <label class="fl" for="f4-why">2. Mengapa konsumsi soda dan makanan pedas saat perut kosong memicu rasa perih?<textarea id="f4-why" data-save></textarea></label>
+          <label class="fl" for="f4-rek">3. Rekomendasi pola konsumsi sehat untuk Dimas<span class="q">Sertakan minimal 3 jadwal makan, misalnya 06.30 sarapan, 12.00 makan siang, 18.30 makan malam.</span><textarea id="f4-rek" data-save></textarea></label>
+        </div>
+        <div class="work">
+          <h3>Kriteria keberhasilan</h3>
+          <p class="note">Centang jika posteremu sudah memuat:</p>
+          <ul class="checks">
+            <li><label for="f4-k1"><input type="checkbox" id="f4-k1" data-save><span>Diagnosis minimal 2 organ yang terganggu</span></label></li>
+            <li><label for="f4-k2"><input type="checkbox" id="f4-k2" data-save><span>Penjelasan minimal 1 reaksi kimia di lambung</span></label></li>
+            <li><label for="f4-k3"><input type="checkbox" id="f4-k3" data-save><span>Minimal 3 jadwal konsumsi gizi seimbang yang realistis</span></label></li>
+          </ul>
+        </div>
+      </div>
+      <div class="work">
+        <h3>Rubrik penilaian presentasi kelompok</h3>
+        <div class="tbl-wrap">
+          <table class="ref">
+            <thead><tr><th scope="col">Indikator</th><th scope="col">Sangat baik (4)</th><th scope="col">Baik (3)</th><th scope="col">Perlu bimbingan (1–2)</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Penguasaan konsep anatomi dan enzim</th><td>Menjelaskan saluran cerna, fungsi HCl, dan enzim dengan tepat tanpa kekeliruan konsep.</td><td>Alur organ benar, ada 1 kekeliruan kecil pada peran enzim.</td><td>Banyak kerancuan antara pencernaan mekanis dan kimiawi.</td></tr>
+              <tr><th scope="row">Analisis kausal masalah</th><td>Mengaitkan gaya hidup dengan iritasi mukosa lambung dan GERD secara logis.</td><td>Menyebutkan organ penyebab, tetapi uraian fisiologisnya kurang mendalam.</td><td>Hanya menyebutkan gejala tanpa menelusuri organ penyebabnya.</td></tr>
+              <tr><th scope="row">Komunikasi dan kolaborasi</th><td>Seluruh anggota berperan aktif, penyampaian percaya diri dan santun.</td><td>Mayoritas anggota berkontribusi, presentasi berjalan tertib.</td><td>Satu siswa mendominasi, anggota lain pasif.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="phase-nav"><button class="btn" type="button" data-phase-go="3">← Fase 3</button><button class="btn" type="button" data-phase-go="5">Fase 5: Evaluasi →</button></div>
+    </div>
+
+    <!-- Fase 5 -->
+    <div class="phase" data-phase="5" hidden>
+      <div class="roles">
+        <div><h4>Guru</h4><p>Membimbing klarifikasi miskonsepsi, misalnya membedakan peran HCl sebagai aktivator dengan enzim pemecah.</p></div>
+        <div><h4>Kamu</h4><p>Melakukan refleksi diri, menyimpulkan prinsip fisiologis pencernaan, dan mengerjakan tes formatif.</p></div>
+      </div>
+      <div class="work">
+        <h3>Luruskan miskonsepsi</h3>
+        <p class="note">Benar atau salah? Pembahasan muncul setelah kamu memilih.</p>
+        <ul class="judge" id="myths"></ul>
+        <div class="judge-foot"><span id="myths-score">0 dari 5 tepat</span><button class="linkish" type="button" id="myths-reset" hidden>Ulangi</button></div>
+      </div>
+      <div class="two">
+        <div class="work">
+          <h3>Refleksi diri</h3>
+          <ul class="checks">
+            <li><label for="f5-r1"><input type="checkbox" id="f5-r1" data-save><span>Saya memahami rute jalannya makanan dan letak kelenjar pencernaan.</span></label></li>
+            <li><label for="f5-r2"><input type="checkbox" id="f5-r2" data-save><span>Saya dapat menjelaskan mengapa asam lambung berlebih dapat merusak kerongkongan.</span></label></li>
+            <li><label for="f5-r3"><input type="checkbox" id="f5-r3" data-save><span>Saya berkomitmen menjaga pola makan teratur dan membatasi makanan pemicu iritasi lambung.</span></label></li>
+          </ul>
+        </div>
+        <div class="work">
+          <h3>Tes formatif</h3>
+          <p>Kuis berisi 12 soal tentang organ, enzim, dan kasus Dimas. Setiap jawaban langsung dibahas.</p>
+          <p><a class="btn solid" href="#kuis">Kerjakan kuis →</a></p>
+        </div>
+      </div>
+      <div class="phase-nav"><button class="btn" type="button" data-phase-go="4">← Fase 4</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KUIS ================= -->
+<section id="kuis" class="sec" aria-labelledby="h-kuis">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Evaluasi</p>
+      <h2 id="h-kuis">Kuis sistem pencernaan</h2>
+      <p class="lede">12 soal pilihan ganda dan menyusun urutan. Setiap jawaban langsung dibahas, lengkap dengan tautan ke materinya.</p>
+    </div>
+    <div class="quiz" id="quiz"></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Disusun dari Modul Ajar IPA Kelas VIII: Sistem Pencernaan Manusia, model Problem Based Learning, Kurikulum Merdeka, tahun ajaran 2026/2027.</p>
+    <p>Sintaks PBL mengacu pada Arends (2012). Isian dan centang di halaman ini tersimpan di perangkat masing-masing.</p>
+  </div>
+</footer>
+
+<script>
+(() => {
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const RM = matchMedia('(prefers-reduced-motion: reduce)');
+const store = {
+  get(k){ try { return localStorage.getItem('jalurcerna:' + k); } catch (e) { return null; } },
+  set(k, v){ try { localStorage.setItem('jalurcerna:' + k, v); } catch (e) {} }
+};
+const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+
+/* ---------- organ data ---------- */
+const ROUTE = ['mulut','kerongkongan','lambung','usus-halus','usus-besar','rektum'];
+const ANCHOR = { mulut:[150,80], kerongkongan:[151,150], lambung:[200,250], 'usus-halus':[150,410], 'usus-besar':[150,344], rektum:[153,520] };
+const O = {
+  mulut:{ name:'Rongga Mulut', short:'Mulut', alt:'Gigi, lidah, dan kelenjar ludah', mek:1, kim:1, ph:[6.8,7.0], phT:'6,8–7,0', phN:'hampir netral',
+    facts:[['Gigi dewasa','32 buah'],['Kelenjar ludah','3 pasang']],
+    text:'Gigi memotong dan menggiling makanan (mastikasi). Lidah mencampurnya dengan ludah sampai menjadi gumpalan lunak yang disebut bolus. Ptialin dalam ludah mulai memecah amilum. Itu sebabnya nasi yang dikunyah lama terasa manis.',
+    rx:[['Ptialin','amilase ludah','Amilum → Maltosa'],['Lisozim','','Membunuh sebagian bakteri'],['Musin (lendir)','','Membasahi dan melicinkan bolus']],
+    nut:[['Amilum → sebagian maltosa',1],['Protein utuh',0],['Lemak utuh',0]],
+    sick:[['Karies gigi','Gigi berlubang membuat makanan sulit dikunyah halus, sehingga pencernaan mekanis tahap awal terganggu.']] },
+  kerongkongan:{ name:'Kerongkongan', short:'Kerongkongan', alt:'Esofagus', mek:1, kim:0, ph:[6.8,7.2], phT:'±7', phN:'netral',
+    facts:[['Panjang','±25 cm'],['Gerak','Peristaltik']],
+    text:'Bolus didorong ke bawah oleh gerak peristaltik. Otot kerongkongan meremas bergantian dari atas ke bawah, mirip memencet tabung pasta gigi. Di ujung bawahnya ada sfingter esofagus bawah, otot cincin yang membuka agar bolus masuk ke lambung lalu menutup kembali.',
+    rx:[['Mukus','','Pelumas. Tidak ada enzim di sini.']],
+    nut:[['Amilum + maltosa',0],['Protein utuh',0],['Lemak utuh',0]],
+    sick:[['GERD (refluks asam)','Sfingter esofagus bawah tidak menutup rapat sehingga asam lambung naik ke kerongkongan. Gejalanya dada terasa terbakar (heartburn).']] },
+  lambung:{ name:'Lambung', short:'Lambung', alt:'Ventrikulus atau gaster', mek:1, kim:1, ph:[1.5,2.0], phT:'1,5–2,0', phN:'sangat asam',
+    facts:[['Makanan tinggal','±2–4 jam'],['Lapisan otot','3 lapis']],
+    text:'Tiga lapis otot lambung mengaduk bolus bersama getah lambung sampai menjadi bubur yang disebut kimus. HCl membuat suasana sangat asam, membunuh kuman, dan mengubah pepsinogen menjadi pepsin. Pepsin lalu memecah protein menjadi pepton. Lapisan mukus melindungi dinding lambung dari asamnya sendiri.',
+    rx:[['HCl','asam klorida, bukan enzim','Pepsinogen → Pepsin'],['Pepsin','','Protein → Pepton'],['Renin','terutama pada bayi','Kaseinogen → Kasein'],['Mukus','','Melindungi dinding lambung dari asam']],
+    nut:[['Tidak berubah. Ptialin berhenti bekerja dalam suasana asam.',0],['Protein → Pepton',1],['Lemak utuh',0]],
+    sick:[['Gastritis (maag)','Lapisan mukus menipis sehingga HCl dan pepsin melukai dinding lambung. Pola makan tidak teratur memperparahnya.'],['Tukak lambung','Luka terbuka pada dinding lambung akibat iritasi yang berlangsung lama.']] },
+  'usus-halus':{ name:'Usus Halus', short:'Usus halus', alt:'Duodenum, jejunum, dan ileum', mek:1, kim:1, ph:[6.0,7.5], phT:'6,0–7,5', phN:'mendekati netral',
+    facts:[['Panjang','±6 m'],['Penyerapan','Lewat vili']],
+    text:'Kimus masuk ke duodenum (usus dua belas jari) dan bercampur dengan empedu dari hati serta getah pankreas. Di sinilah pencernaan kimiawi selesai. Jutaan vili (jonjot usus) di dinding usus menyerap glukosa, asam amino, asam lemak, dan gliserol ke dalam darah dan pembuluh limfa.',
+    rx:[['Amilase','dari pankreas','Amilum → Maltosa'],['Maltase','','Maltosa → Glukosa'],['Laktase','','Laktosa → Glukosa + Galaktosa'],['Tripsin','dari pankreas','Pepton → Asam amino'],['Peptidase','','Peptida → Asam amino'],['Lipase','dari pankreas','Lemak → Asam lemak + Gliserol']],
+    nut:[['Glukosa, lalu diserap',1],['Asam amino, lalu diserap',1],['Asam lemak + gliserol, lalu diserap',1]],
+    sick:[['Tifus (demam tifoid)','Infeksi bakteri Salmonella typhi pada usus halus.'],['Intoleransi laktosa','Laktase kurang, sehingga minum susu menimbulkan kembung dan diare.']] },
+  'usus-besar':{ name:'Usus Besar', short:'Usus besar', alt:'Kolon naik, melintang, dan turun', mek:1, kim:0, ph:[5.5,7.0], phT:'5,5–7,0', phN:'sedikit asam sampai netral',
+    facts:[['Panjang','±1,5 m'],['Diserap','Air dan mineral']],
+    text:'Sisa makanan yang tidak tercerna, terutama serat, masuk ke usus besar. Air dan garam mineral diserap kembali ke darah. Bakteri Escherichia coli membusukkan sisa makanan dan menghasilkan vitamin K. Sisa yang makin padat menjadi feses.',
+    rx:[['Bakteri E. coli','','Membusukkan sisa makanan dan menghasilkan vitamin K'],['Bakteri usus','','Fermentasi serat (selulosa)']],
+    nut:[['Serat sisa difermentasi bakteri',1],['Sudah diserap di usus halus',0],['Sudah diserap di usus halus',0]],
+    sick:[['Diare','Air terlalu sedikit diserap sehingga feses encer.'],['Konstipasi (sembelit)','Air terlalu banyak diserap sehingga feses keras.'],['Apendisitis','Radang usus buntu (umbai cacing).']] },
+  rektum:{ name:'Rektum & Anus', short:'Rektum & anus', alt:'Ujung saluran pencernaan', mek:1, kim:0, ph:[6.8,7.2], phT:'±7', phN:'netral',
+    facts:[['Panjang rektum','±12 cm'],['Pengatur','Otot sfingter anus']],
+    text:'Feses disimpan sementara di rektum. Saat rektum penuh, muncul rasa ingin buang air besar. Otot sfingter anus mengatur kapan feses dikeluarkan (defekasi).',
+    rx:[['Tanpa enzim','','Menyimpan dan mengeluarkan feses']],
+    nutNote:'Yang tersisa hanya serat, air, sel-sel mati, dan bakteri. Semuanya dikeluarkan sebagai feses.',
+    sick:[['Hemoroid (wasir)','Pembuluh darah di sekitar anus melebar, sering dipicu sembelit dan mengejan terlalu kuat.']] },
+  hati:{ name:'Hati', short:'Hati', alt:'Hepar, dengan kantong empedu', gland:1, ph:[7.5,8.0], phT:'7,5–8,0', phN:'basa lemah (empedu)',
+    facts:[['Ukuran','Organ dalam terbesar'],['Penyimpan empedu','Kantong empedu']],
+    text:'Hati menghasilkan empedu. Empedu disimpan di kantong empedu, lalu dialirkan ke duodenum saat ada makanan berlemak. Empedu bukan enzim. Garam empedu memecah lemak menjadi butiran kecil (emulsi) agar lipase lebih mudah bekerja.',
+    rx:[['Garam empedu','','Lemak → Butiran lemak kecil'],['Bilirubin','zat warna empedu','Memberi warna cokelat pada feses']],
+    nut:[['Tidak terpengaruh',0],['Tidak terpengaruh',0],['Diemulsi menjadi butiran kecil',1]],
+    sick:[['Batu empedu','Endapan di kantong empedu menyumbat aliran empedu sehingga lemak sulit dicerna.']] },
+  pankreas:{ name:'Pankreas', short:'Pankreas', alt:'Kelenjar di belakang lambung', gland:1, ph:[7.8,8.3], phT:'±8', phN:'basa (getah pankreas)',
+    facts:[['Bermuara di','Duodenum'],['Sifat getah','Basa']],
+    text:'Pankreas mengalirkan getah pankreas ke duodenum. Isinya enzim untuk ketiga zat makanan sekaligus, ditambah natrium bikarbonat yang menetralkan kimus asam dari lambung.',
+    rx:[['Amilase','','Amilum → Maltosa'],['Tripsin','','Pepton → Asam amino'],['Lipase','','Lemak → Asam lemak + Gliserol'],['Natrium bikarbonat','','Menetralkan kimus asam']],
+    nut:[['Amilum → Maltosa',1],['Pepton → Asam amino',1],['Lemak → Asam lemak + gliserol',1]],
+    sick:[['Pankreatitis','Radang pankreas. Enzimnya aktif terlalu dini dan melukai jaringan pankreas sendiri.']] }
+};
+
+/* ---------- figure ---------- */
+const fig = $('#fig');
+$$('.tube', fig).forEach(p => {
+  const w = parseFloat(getComputedStyle(p).strokeWidth) || 8;
+  const c = p.cloneNode(); c.setAttribute('class', 'case'); c.style.strokeWidth = (w + 4) + 'px'; p.before(c);
+  const h = p.cloneNode(); h.setAttribute('class', 'hit'); h.style.strokeWidth = Math.max(w + 12, 20) + 'px'; p.after(h);
+});
+const route = $('#route');
+const RL = route.getTotalLength();
+const near = ([x, y]) => { let b = 0, bd = Infinity; for (let s = 0; s <= RL; s += 1.5) { const p = route.getPointAtLength(s); const d = (p.x - x) ** 2 + (p.y - y) ** 2; if (d < bd) { bd = d; b = s; } } return b; };
+const STOP = ROUTE.map(id => near(ANCHOR[id]));
+const bolus = $('#bolus');
+let curLen = 0, raf = 0;
+function place(l){ const p = route.getPointAtLength(l); bolus.setAttribute('cx', p.x.toFixed(1)); bolus.setAttribute('cy', p.y.toFixed(1)); curLen = l; }
+function glide(to, done){
+  cancelAnimationFrame(raf);
+  const from = curLen, d = Math.abs(to - from);
+  if (RM.matches || d < 1) { place(to); if (done) done(); return; }
+  const dur = Math.min(2600, Math.max(450, d * 3.2)), t0 = performance.now();
+  const ease = t => t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+  const tick = now => { const t = Math.min(1, (now - t0) / dur); place(from + (to - from) * ease(t)); if (t < 1) raf = requestAnimationFrame(tick); else if (done) done(); };
+  raf = requestAnimationFrame(tick);
+}
+
+/* ---------- station card ---------- */
+const station = $('#station');
+let cur = 'mulut', lastRoute = 0;
+function phHTML(o){
+  const [lo, hi] = o.ph, w = (hi - lo) / 14 * 100;
+  const thin = w < 3;
+  const style = thin ? `left:${((lo + hi) / 2 / 14 * 100).toFixed(2)}%` : `left:${(lo / 14 * 100).toFixed(2)}%;width:${w.toFixed(2)}%`;
+  return `<div class="ph"><h4>Derajat keasaman</h4><div class="ph-bar" aria-hidden="true"><span class="ph-rng${thin ? ' thin' : ''}" style="${style}"></span></div><div class="ph-scale" aria-hidden="true"><span>0 asam</span><span>7 netral</span><span>14 basa</span></div><p class="ph-lbl"><b>pH ${o.phT}</b> · ${o.phN}</p></div>`;
+}
+function renderStation(id){
+  const o = O[id], ri = ROUTE.indexOf(id);
+  const meta = o.gland ? 'Kelenjar pencernaan · bermuara di duodenum' : `Tahap ${ri + 1} dari 6 · saluran pencernaan`;
+  const pills = o.gland
+    ? `<span class="pill yes">Kelenjar</span><span class="pill">Tidak dilewati makanan</span>`
+    : `<span class="pill ${o.mek ? 'yes' : 'no'}">Mekanis</span><span class="pill ${o.kim ? 'yes' : 'no'}">Kimiawi</span><span class="sr">${o.mek ? 'Ada pencernaan mekanis.' : ''} ${o.kim ? 'Ada pencernaan kimiawi.' : 'Tidak ada pencernaan kimiawi oleh enzim tubuh.'}</span>`;
+  const facts = o.facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('');
+  const rx = o.rx.map(([n, note, r]) => `<li><div><b>${n}</b>${note ? `<small>${note}</small>` : ''}</div>${r.includes('→') ? `<code>${r}</code>` : `<span>${r}</span>`}</li>`).join('');
+  const NUT = ['Karbohidrat', 'Protein', 'Lemak'];
+  const nut = o.nut
+    ? `<table class="nut"><tbody>${o.nut.map(([t, c], i) => `<tr class="${c ? 'chg' : ''}"><th scope="row">${NUT[i]}</th><td>${t}${c ? '<span class="chg-t">berubah</span>' : ''}</td></tr>`).join('')}</tbody></table>`
+    : `<p>${o.nutNote}</p>`;
+  const sick = o.sick.map(([n, t]) => `<p><b>${n}.</b> ${t}</p>`).join('');
+  let next;
+  if (o.gland) next = `<span>Getahnya bekerja di usus halus.</span><button class="btn" type="button" data-go="usus-halus">Buka usus halus →</button>`;
+  else if (ri < ROUTE.length - 1) next = `<span>Berikutnya</span><button class="btn" type="button" data-go="${ROUTE[ri + 1]}">${ri + 2}. ${O[ROUTE[ri + 1]].short} →</button>`;
+  else next = `<span>Perjalanan selesai.</span><button class="btn" type="button" data-go="mulut">Ulang dari mulut</button>`;
+  station.innerHTML = `<div class="st-in">
+    <div class="st-top"><p class="st-meta">${meta}</p><h3 class="st-name" id="st-name">${o.name}</h3><p class="st-alt">${o.alt}</p><div class="pills">${pills}</div></div>
+    ${phHTML(o)}
+    <dl class="st-facts">${facts}</dl>
+    <p>${o.text}</p>
+    <div class="st-block"><h4>Enzim dan zat</h4><ul class="rx">${rx}</ul></div>
+    <div class="st-block"><h4>${o.gland ? 'Zat makanan yang diolah' : 'Zat makanan setelah tahap ini'}</h4>${nut}</div>
+    <div class="sick"><h4>Gangguan</h4>${sick}</div>
+    <div class="st-next">${next}</div>
+  </div>`;
+  $('#st-live').textContent = `${o.name}. ${meta}.`;
+}
+function select(id, opts = {}){
+  cur = id;
+  $$('[data-organ]').forEach(el => el.classList.toggle('on', el.dataset.organ === id));
+  fig.classList.add('sel');
+  const ri = ROUTE.indexOf(id);
+  if (ri > -1) { lastRoute = ri; if (opts.move !== false) glide(STOP[ri], opts.onArrive); }
+  $$('.route-btn').forEach(b => b.setAttribute('aria-current', b.dataset.go === id ? 'step' : 'false'));
+  renderStation(id);
+  $('#step-lbl').textContent = ri > -1 ? `Tahap ${ri + 1} dari 6` : 'Kelenjar pencernaan';
+  $('#prev').disabled = ri === 0;
+  $('#next').disabled = ri === ROUTE.length - 1;
+}
+
+/* play */
+let playing = false, timer = 0;
+const playBtn = $('#play');
+function setPlayUI(on){
+  playBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  $('#play-t').textContent = on ? 'Jeda' : 'Putar perjalanan';
+  $('#play-ico').innerHTML = on ? '<path d="M2 1h3v10H2zM7 1h3v10H7z" fill="currentColor"/>' : '<path d="M2 1 L11 6 L2 11 Z" fill="currentColor"/>';
+}
+function stopPlay(){ if (!playing) return; playing = false; clearTimeout(timer); setPlayUI(false); }
+function startPlay(){
+  playing = true; setPlayUI(true);
+  let i = ROUTE.indexOf(cur);
+  if (i < 0 || i === ROUTE.length - 1) { i = 0; place(STOP[0]); select('mulut', { move:false }); }
+  const step = () => {
+    if (!playing) return;
+    if (i >= ROUTE.length - 1) { stopPlay(); return; }
+    i++;
+    select(ROUTE[i], { onArrive: () => { if (playing) timer = setTimeout(step, 2200); } });
+  };
+  timer = setTimeout(step, 700);
+}
+playBtn.addEventListener('click', () => playing ? stopPlay() : startPlay());
+$('#prev').addEventListener('click', () => { stopPlay(); if (lastRoute > 0) select(ROUTE[lastRoute - 1]); });
+$('#next').addEventListener('click', () => { stopPlay(); if (ROUTE.indexOf(cur) < 0) select(ROUTE[lastRoute]); else if (lastRoute < ROUTE.length - 1) select(ROUTE[lastRoute + 1]); });
+
+$$('[data-organ]', fig).forEach(g => {
+  g.addEventListener('click', () => { stopPlay(); select(g.dataset.organ); });
+  g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); stopPlay(); select(g.dataset.organ); } });
+});
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-go]');
+  if (!b) return;
+  stopPlay();
+  const id = b.dataset.go;
+  select(id);
+  const inPlate = b.closest('#plate') || b.closest('.route-row');
+  if (!inPlate) $('#plate').scrollIntoView({ behavior: RM.matches ? 'auto' : 'smooth', block: 'start' });
+});
+
+place(STOP[0]);
+select('mulut', { move:false });
+
+/* ---------- judge lists (sorter + myths) ---------- */
+function judge(listId, scoreId, resetId, items, opts){
+  const ul = $('#' + listId), sc = $('#' + scoreId), rs = $('#' + resetId);
+  let done = 0, right = 0;
+  const draw = () => {
+    done = 0; right = 0; rs.hidden = true; sc.textContent = `0 dari ${items.length} tepat`;
+    ul.innerHTML = items.map((it, i) => `<li data-i="${i}"><p>${it.t}</p><div class="seg" role="group" aria-label="Jawaban">${opts.map(o => `<button type="button" data-v="${o.v}" aria-pressed="false">${o.label}</button>`).join('')}</div><p class="why" hidden></p></li>`).join('');
+  };
+  ul.addEventListener('click', e => {
+    const b = e.target.closest('button[data-v]'); if (!b) return;
+    const li = b.closest('li'); if (li.dataset.done) return;
+    const it = items[+li.dataset.i], ok = b.dataset.v === it.a;
+    li.dataset.done = '1'; li.classList.add(ok ? 'ok' : 'no');
+    b.setAttribute('aria-pressed', 'true');
+    $$('button', li).forEach(x => { x.disabled = true; if (x.dataset.v === it.a) x.classList.add('is-right'); });
+    const w = $('.why', li);
+    w.innerHTML = ok ? `<b>Tepat.</b> ${it.why}` : `<b>Belum tepat.</b> ${opts.find(o => o.v === it.a).say} ${it.why}`;
+    w.hidden = false;
+    done++; if (ok) right++;
+    sc.textContent = `${right} dari ${items.length} tepat` + (done < items.length ? ` · ${items.length - done} belum dijawab` : '');
+    if (done === items.length) rs.hidden = false;
+  });
+  rs.addEventListener('click', draw);
+  draw();
+}
+judge('sorter', 'sorter-score', 'sorter-reset', [
+  { t:'Gigi geraham menggiling nasi', a:'m', why:'Ukuran nasi mengecil, tetapi molekul amilumnya tetap.' },
+  { t:'Ptialin mengubah amilum menjadi maltosa', a:'k', why:'Enzim memutus ikatan amilum menjadi maltosa.' },
+  { t:'Otot kerongkongan meremas bolus ke bawah', a:'m', why:'Gerak peristaltik hanya mendorong makanan.' },
+  { t:'Pepsin memecah protein menjadi pepton', a:'k', why:'Pepsin memutus ikatan peptida pada protein.' },
+  { t:'Otot lambung mengaduk makanan menjadi kimus', a:'m', why:'Makanan teraduk dan melunak, molekulnya belum berubah.' },
+  { t:'Empedu memecah lemak menjadi butiran kecil', a:'m', why:'Emulsi hanya memperkecil butiran. Molekul lemak masih utuh sampai lipase bekerja.' },
+  { t:'Lipase mengubah lemak menjadi asam lemak dan gliserol', a:'k', why:'Lipase menghidrolisis molekul lemak.' },
+  { t:'Maltase mengubah maltosa menjadi glukosa', a:'k', why:'Disakarida dipecah menjadi monosakarida yang siap diserap.' }
+], [ { v:'m', label:'Mekanis', say:'Ini pencernaan mekanis.' }, { v:'k', label:'Kimiawi', say:'Ini pencernaan kimiawi.' } ]);
+judge('myths', 'myths-score', 'myths-reset', [
+  { t:'HCl adalah enzim yang memecah protein.', a:'s', why:'HCl bukan enzim. HCl mengaktifkan pepsinogen menjadi pepsin, dan pepsin yang memecah protein menjadi pepton.' },
+  { t:'Empedu adalah enzim pencerna lemak.', a:'s', why:'Empedu mengemulsikan lemak menjadi butiran kecil. Yang memecah molekul lemak adalah lipase.' },
+  { t:'Nasi terasa manis setelah lama dikunyah karena amilum diubah menjadi maltosa.', a:'b', why:'Ptialin dalam ludah menghidrolisis amilum menjadi maltosa yang berasa manis.' },
+  { t:'Sari makanan terutama diserap di lambung.', a:'s', why:'Penyerapan sari makanan terutama terjadi di usus halus melalui vili.' },
+  { t:'Antasida menyembuhkan maag secara permanen.', a:'s', why:'Antasida hanya menetralkan asam yang sudah ada. Lambung tetap memproduksi HCl, jadi pola makan tetap harus diperbaiki.' }
+], [ { v:'b', label:'Benar', say:'Pernyataan ini benar.' }, { v:'s', label:'Salah', say:'Pernyataan ini salah.' } ]);
+
+/* ---------- phases ---------- */
+function setPhase(n, scroll){
+  $$('.ph-btn').forEach(b => b.setAttribute('aria-current', +b.dataset.phase === n ? 'step' : 'false'));
+  $$('.phase').forEach(p => { p.hidden = +p.dataset.phase !== n; });
+  if (scroll) $('#phases').scrollIntoView({ behavior: RM.matches ? 'auto' : 'smooth', block: 'start' });
+}
+$$('.ph-btn').forEach(b => b.addEventListener('click', () => setPhase(+b.dataset.phase)));
+$$('[data-phase-go]').forEach(b => b.addEventListener('click', () => setPhase(+b.dataset.phaseGo, true)));
+$('#phases').style.scrollMarginTop = '64px';
+
+/* case tagging */
+let mode = 'gejala', checked = false;
+$$('[data-mode]').forEach(b => b.addEventListener('click', () => {
+  mode = b.dataset.mode;
+  $$('[data-mode]').forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
+}));
+const tags = $$('#narr .tag');
+const clearMarks = () => tags.forEach(t => t.classList.remove('right', 'wrong', 'missed'));
+tags.forEach(t => {
+  t.setAttribute('aria-pressed', 'false');
+  t.addEventListener('click', () => {
+    if (checked) { checked = false; clearMarks(); $('#tag-res').textContent = ''; }
+    if (t.dataset.mark === mode) { delete t.dataset.mark; t.setAttribute('aria-pressed', 'false'); }
+    else { t.dataset.mark = mode; t.setAttribute('aria-pressed', 'true'); }
+  });
+});
+$('#tag-check').addEventListener('click', () => {
+  let ok = 0, tagged = 0;
+  clearMarks();
+  tags.forEach(t => {
+    if (!t.dataset.mark) { t.classList.add('missed'); return; }
+    tagged++;
+    if (t.dataset.mark === t.dataset.kind) { ok++; t.classList.add('right'); } else t.classList.add('wrong');
+  });
+  checked = true;
+  const g = tags.filter(t => t.dataset.kind === 'gejala').map(t => t.textContent).join(', ');
+  const p = tags.filter(t => t.dataset.kind === 'pemicu').map(t => t.textContent).join(', ');
+  $('#tag-res').innerHTML = tagged === 0
+    ? 'Belum ada frasa yang ditandai. Pilih Gejala atau Pemicu, lalu ketuk frasa di kasus.'
+    : `<b>${ok} dari ${tags.length} tepat.</b> Gejala: ${g}. Pemicu: ${p}.`;
+});
+$('#tag-reset').addEventListener('click', () => {
+  checked = false; clearMarks();
+  tags.forEach(t => { delete t.dataset.mark; t.setAttribute('aria-pressed', 'false'); });
+  $('#tag-res').textContent = '';
+});
+
+/* members */
+$('#members').innerHTML = [1,2,3,4,5].map(i => `<div class="member"><span class="mn">${i}.</span><input id="lk-a${i}" data-save type="text" aria-label="Nama anggota ${i}" placeholder="Nama anggota${i === 5 ? ' (opsional)' : ''}"><select id="lk-d${i}" data-save aria-label="Divisi anggota ${i}"><option value="">Pilih divisi</option><option>Anatomi &amp; Mekanik</option><option>Biokimia Enzim</option><option>Pola Konsumsi</option></select></div>`).join('');
+
+/* compare */
+const cmp = $('#cmp'), lk = $('#lk-table');
+const CAP = { normal:'Sfingter menutup rapat, mukus tebal, dan asam bekerja pada makanan.', dimas:'Sfingter membuka saat tidak seharusnya sehingga asam naik ke kerongkongan. Lambung kosong dan asam berlebih mengikis mukus.' };
+$$('[data-cmp]').forEach(b => b.addEventListener('click', () => {
+  const s = b.dataset.cmp;
+  $$('[data-cmp]').forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
+  cmp.classList.toggle('is-dimas', s === 'dimas');
+  lk.dataset.state = s;
+  $('#cmp-cap').textContent = CAP[s];
+}));
+
+/* saved inputs */
+$$('[data-save]').forEach(el => {
+  const v = store.get(el.id);
+  if (v !== null) { if (el.type === 'checkbox') el.checked = v === '1'; else el.value = v; }
+  el.addEventListener(el.type === 'checkbox' || el.tagName === 'SELECT' ? 'change' : 'input', () => store.set(el.id, el.type === 'checkbox' ? (el.checked ? '1' : '0') : el.value));
+});
+
+/* ---------- quiz ---------- */
+const QZ = [
+  { organ:'mulut', q:'Nasi yang dikunyah lama di mulut lama-lama terasa manis. Apa penyebabnya?',
+    opts:['Ptialin mengubah amilum menjadi maltosa','Pepsin mengubah protein menjadi pepton','Lidah menghasilkan gula saat mengunyah','Gigi menghancurkan nasi menjadi glukosa'],
+    why:'Ptialin (amilase ludah) memecah amilum menjadi maltosa yang berasa manis. Gigi hanya menghancurkan secara mekanis tanpa mengubah molekul.' },
+  { type:'order', organ:'mulut', q:'Susun urutan saluran yang dilewati makanan, dimulai dari yang pertama.',
+    items:['Mulut','Kerongkongan','Lambung','Usus halus','Usus besar','Rektum & anus'],
+    why:'Hati dan pankreas tidak dilewati makanan. Keduanya kelenjar yang mengalirkan getahnya ke duodenum.' },
+  { organ:'lambung', q:'Fungsi asam klorida (HCl) di lambung yang benar adalah …',
+    opts:['Mengaktifkan pepsinogen menjadi pepsin dan membunuh kuman','Memecah amilum menjadi glukosa','Mengemulsikan lemak menjadi butiran kecil','Menyerap air dari sisa makanan'],
+    why:'HCl bukan enzim. HCl menciptakan pH 1,5–2,0, mengaktifkan pepsinogen menjadi pepsin, dan membunuh kuman yang ikut masuk bersama makanan.' },
+  { organ:'kerongkongan', q:'Gerak meremas otot kerongkongan yang mendorong bolus ke lambung disebut …',
+    opts:['Gerak peristaltik','Mastikasi','Emulsifikasi','Defekasi'],
+    why:'Peristaltik adalah kontraksi otot bergelombang. Gerak ini termasuk pencernaan mekanis karena tidak mengubah molekul makanan.' },
+  { organ:'usus-halus', q:'Manakah contoh pencernaan kimiawi?',
+    opts:['Lipase memecah lemak menjadi asam lemak dan gliserol','Gigi geraham menggiling makanan','Otot lambung mengaduk makanan menjadi kimus','Empedu memecah lemak menjadi butiran kecil'],
+    why:'Pencernaan kimiawi memutus ikatan molekul dengan bantuan enzim. Empedu hanya memperkecil ukuran butiran lemak, jadi termasuk mekanis.' },
+  { organ:'hati', q:'Empedu dihasilkan oleh … dan berfungsi untuk …',
+    opts:['Hati; mengemulsikan lemak','Pankreas; memecah protein','Lambung; membunuh kuman','Kantong empedu; mengubah lemak menjadi asam lemak'],
+    why:'Hati menghasilkan empedu, sedangkan kantong empedu hanya menyimpannya. Empedu bukan enzim. Garam empedu mengemulsikan lemak agar lipase lebih mudah bekerja.' },
+  { organ:'usus-halus', q:'Sari makanan terutama diserap melalui …',
+    opts:['Vili usus halus','Dinding lambung','Dinding usus besar','Dinding kerongkongan'],
+    why:'Vili (jonjot usus) memperluas permukaan penyerapan sehingga glukosa, asam amino, asam lemak, dan gliserol masuk ke darah dan pembuluh limfa.' },
+  { organ:'kerongkongan', q:'Dimas merasakan dada terbakar (heartburn). Bagian yang tidak bekerja normal sehingga asam lambung naik adalah …',
+    opts:['Sfingter esofagus bawah','Vili usus halus','Kelenjar ludah','Usus buntu'],
+    why:'Sfingter esofagus bawah seharusnya menutup rapat setelah bolus masuk. Jika melemah atau membuka tidak normal, isi lambung yang asam naik ke kerongkongan. Kondisi ini disebut GERD.' },
+  { organ:'lambung', q:'Mengapa kebiasaan Dimas melewatkan sarapan memperparah perih di ulu hati?',
+    opts:['HCl tetap diproduksi tanpa makanan, sehingga asam mengikis lapisan mukus lambung','Lambung berhenti memproduksi mukus pada pagi hari','Tanpa sarapan, ptialin masuk ke lambung dan melukainya','Usus halus menyerap asam lambung terlalu banyak'],
+    why:'Saat lambung kosong, asam dan pepsin tidak bekerja pada makanan. Asam langsung mengenai dinding lambung, dan mukus yang menipis tidak cukup melindunginya.' },
+  { organ:'lambung', q:'Antasida meredakan perih lambung untuk sementara karena …',
+    opts:['Bersifat basa sehingga menetralkan HCl','Membunuh bakteri E. coli di lambung','Menghentikan produksi HCl selamanya','Mempercepat gerak peristaltik'],
+    why:'Antasida mengandung basa, misalnya Mg(OH)₂. Reaksinya: Mg(OH)₂ + 2HCl → MgCl₂ + 2H₂O. Efeknya sesaat karena lambung terus memproduksi HCl.' },
+  { organ:'usus-besar', q:'Jika usus besar menyerap terlalu sedikit air, akibatnya adalah …',
+    opts:['Diare','Konstipasi','Maag','Karies'],
+    why:'Air yang tidak diserap membuat feses encer (diare). Sebaliknya, air yang terlalu banyak diserap membuat feses keras (konstipasi).' },
+  { organ:'usus-besar', q:'Bakteri E. coli di usus besar berperan untuk …',
+    opts:['Membusukkan sisa makanan dan menghasilkan vitamin K','Memecah protein menjadi asam amino','Menghasilkan asam klorida','Menyerap glukosa ke dalam darah'],
+    why:'E. coli membusukkan sisa makanan yang tidak tercerna dan menghasilkan vitamin K yang diserap tubuh.' }
+];
+const qBox = $('#quiz');
+let qs = [], qi = 0, res = [];
+const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+function qStart(focus){
+  qs = QZ.map(q => q.type === 'order'
+    ? { ...q, pool: shuffle(q.items.slice()), picked: [], done:false }
+    : { ...q, sh: shuffle(q.opts.map((t, i) => ({ t, ok: i === 0 }))), done:false });
+  qi = 0; res = [];
+  qRender(focus);
+}
+function headHTML(){
+  return `<div class="q-head"><div class="q-count"><span>Soal ${qi + 1} dari ${qs.length}</span><span>${res.filter(Boolean).length} benar</span></div><div class="segs" aria-hidden="true">${qs.map((_, i) => `<i class="${res[i] === true ? 'ok' : res[i] === false ? 'no' : i === qi ? 'cur' : ''}"></i>`).join('')}</div></div>`;
+}
+function fbHTML(q, ok){
+  return `<div class="q-fb" role="status"><p class="fb-v ${ok ? 'ok' : 'no'}">${ok ? 'Benar.' : 'Belum tepat.'}</p><p>${q.why}</p><p><button class="linkish" type="button" data-go="${q.organ}">Buka materi: ${O[q.organ].short}</button></p></div>`;
+}
+function navHTML(){
+  const last = qi === qs.length - 1;
+  return `<div class="q-nav"><button class="btn solid" type="button" id="q-next">${last ? 'Lihat hasil' : 'Soal berikutnya →'}</button></div>`;
+}
+function qRender(focus){
+  const q = qs[qi];
+  let body;
+  if (q.type === 'order') {
+    const slots = q.items.map((_, i) => {
+      const t = q.picked[i];
+      const cls = q.done ? (t === q.items[i] ? 'right' : 'wrong') : '';
+      return t ? `<button class="slot filled ${cls}" type="button" data-slot="${i}" ${q.done ? 'disabled' : ''} aria-label="Urutan ${i + 1}: ${esc(t)}${q.done ? '' : '. Ketuk untuk melepas'}"><span class="sn">${i + 1}</span><span>${esc(t)}</span></button>`
+               : `<div class="slot"><span class="sn">${i + 1}</span><span></span></div>`;
+    }).join('');
+    const pool = q.pool.map(t => `<button class="chip" type="button" data-chip="${esc(t)}" ${q.picked.includes(t) || q.done ? 'disabled' : ''}>${esc(t)}</button>`).join('');
+    body = `<p class="q-text" tabindex="-1">${q.q}</p><p class="note">Ketuk nama organ sesuai urutan. Ketuk kotak yang sudah terisi untuk melepasnya.</p><div class="slots">${slots}</div><div class="pool">${pool}</div>`
+      + (q.done ? fbHTML({ ...q, why: (res[qi] ? '' : `Urutan yang benar: ${q.items.join(' → ')}. `) + q.why }, res[qi]) + navHTML()
+                : `<div class="q-nav"><button class="btn" type="button" id="q-clear" ${q.picked.length ? '' : 'disabled'}>Kosongkan</button><button class="btn solid" type="button" id="q-check" ${q.picked.length === q.items.length ? '' : 'disabled'}>Periksa urutan</button></div>`);
+  } else {
+    const opts = q.sh.map((o, i) => {
+      let cls = '';
+      if (q.done) { if (o.ok) cls = 'right'; else if (q.chosen === i) cls = 'wrong'; }
+      return `<button class="opt ${cls}" type="button" data-opt="${i}" ${q.done ? 'disabled' : ''}><span class="opt-k">${'ABCD'[i]}${cls === 'right' ? ' ✓' : cls === 'wrong' ? ' ✗' : ''}</span><span>${esc(o.t)}</span></button>`;
+    }).join('');
+    body = `<p class="q-text" tabindex="-1">${q.q}</p><div class="opts">${opts}</div>` + (q.done ? fbHTML(q, res[qi]) + navHTML() : '');
+  }
+  qBox.innerHTML = headHTML() + body;
+  if (focus) { const el = $(focus === 'nav' ? '#q-next' : '.q-text', qBox); if (el) el.focus({ preventScroll: focus !== 'q' }); }
+}
+function qResult(){
+  const score = res.filter(Boolean).length;
+  const best = Math.max(score, +(store.get('best') || 0));
+  store.set('best', String(best));
+  const msg = score >= 10 ? 'Penguasaanmu sangat baik.' : score >= 7 ? 'Sudah baik. Tinjau lagi materi pada soal yang terlewat.' : 'Pelajari lagi materi pada soal yang terlewat, lalu ulangi kuis.';
+  const missed = qs.map((q, i) => ({ q, i })).filter(x => !res[x.i]);
+  qBox.innerHTML = `<div class="q-head"><div class="q-count"><span>Hasil kuis</span><span>Skor terbaik di perangkat ini: ${best}/${qs.length}</span></div><div class="segs" aria-hidden="true">${qs.map((_, i) => `<i class="${res[i] ? 'ok' : 'no'}"></i>`).join('')}</div></div>
+    <p class="q-score" tabindex="-1">${score}<span>/${qs.length}</span></p>
+    <p class="q-text">${msg}</p>
+    ${missed.length ? `<div class="st-block"><h4>Soal yang perlu ditinjau</h4><ul class="missed">${missed.map(({ q, i }) => `<li><span>${i + 1}. ${q.q}</span><button class="linkish" type="button" data-go="${q.organ}">Buka ${O[q.organ].short}</button></li>`).join('')}</ul></div>` : ''}
+    <div class="q-nav"><button class="btn solid" type="button" id="q-again">Ulangi kuis</button></div>`;
+  $('.q-score', qBox).focus({ preventScroll: true });
+}
+qBox.addEventListener('click', e => {
+  const q = qs[qi];
+  const opt = e.target.closest('[data-opt]');
+  if (opt && !q.done) {
+    const i = +opt.dataset.opt; q.done = true; q.chosen = i; res[qi] = q.sh[i].ok; qRender('nav'); return;
+  }
+  const chip = e.target.closest('[data-chip]');
+  if (chip && !q.done) { q.picked.push(chip.dataset.chip); qRender(); return; }
+  const slot = e.target.closest('[data-slot]');
+  if (slot && !q.done) { q.picked.splice(+slot.dataset.slot, 1); qRender(); return; }
+  if (e.target.closest('#q-clear')) { q.picked = []; qRender(); return; }
+  if (e.target.closest('#q-check')) { q.done = true; res[qi] = q.picked.every((t, i) => t === q.items[i]); qRender('nav'); return; }
+  if (e.target.closest('#q-next')) { if (qi < qs.length - 1) { qi++; qRender('q'); } else qResult(); return; }
+  if (e.target.closest('#q-again')) { qStart('q'); }
+});
+qStart(false);
+
+/* ---------- scroll spy ---------- */
+const links = $$('.nav a');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(en => { if (en.isIntersecting) links.forEach(a => a.setAttribute('aria-current', a.getAttribute('href') === '#' + en.target.id ? 'true' : 'false')); });
+}, { rootMargin: '-45% 0px -50% 0px' });
+['materi','model','sintaks','kuis'].forEach(id => io.observe(document.getElementById(id)));
+})();
+</script>
+</body>
+</html>
